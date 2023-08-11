@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.footer__left {
+  margin-left: 60px;
+}
+
+.footer__right {
+  display: flex;
+  gap: 20px;
+  margin-right: 60px;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: #1a1b22;
+}
+
+.footer__left-description {
+  color: #b6bcbf;
+  margin-top: 0;
+  margin-bottom: 0;
+}

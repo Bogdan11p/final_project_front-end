@@ -2,8 +2,9 @@ import "../Header/Header.css";
 import React from "react";
 import headerLogo from "../../images/header-logo.svg";
 import { NavLink } from "react-router-dom";
+import logoutLogo from "../../images/logout.svg";
 
-const Header = ({}) => {
+const Header = ({ isLoggedIn }) => {
   return (
     <header className="header">
       <div className="header__upper">
@@ -16,10 +17,54 @@ const Header = ({}) => {
           <NavLink to="/" className="header__link">
             <p className="header__home">Home</p>
           </NavLink>
-          <button className="header__signin">Sign in</button>
+          {isLoggedIn ? (
+            <>
+              <div className="header__signedIn">
+                <NavLink to="/saved-news" className="header__link">
+                  <p className="header__signedIn-articles">Saved articles</p>
+                </NavLink>
+                <div className="header__logout">
+                  <p className="header__logout-name">Bogdan</p>
+                  <button
+                    className="header__logout-button"
+                    type="button"
+                    aria-label="logout"
+                  >
+                    <img src={logoutLogo} alt="logout logo" />
+                  </button>
+                </div>
+              </div>
+            </>
+          ) : (
+            <button className="header__signin">Sign in</button>
+          )}
         </div>
       </div>
-      <div className="header__lower"></div>
+      <div className="header__lower">
+        <h1 className="header__title">What's going on in the world?</h1>
+        <p className="header__subtitle">
+          Find the latest news on any topic and save them in your personal
+          account.
+        </p>
+        <form className="header__form">
+          <input
+            className="header__form-input"
+            type="text"
+            placeholder="Enter topic"
+            minLength="1"
+            maxLength="30"
+            name="topic"
+            id="topic-search"
+          />
+          <button
+            className="header__form-button"
+            type="button"
+            aria-label="search"
+          >
+            Search
+          </button>
+        </form>
+      </div>
     </header>
   );
 };

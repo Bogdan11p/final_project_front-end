@@ -1,0 +1,22 @@
+.about {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  height: 624px;
+  width: 100%;
+}
+
+.about__left {
+  margin: auto 0;
+}
+
+.about__left-picture {
+  width: 464px;
+  height: 464px;
+  border-radius: 80%;
+}
+
+.about__right {
+  margin-top: 85px;
+  width: 600px;
+}
