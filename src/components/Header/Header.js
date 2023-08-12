@@ -3,8 +3,9 @@ import React from "react";
 import headerLogo from "../../images/header-logo.svg";
 import { NavLink } from "react-router-dom";
 import logoutLogo from "../../images/logout.svg";
+import SearchForm from "../SearchForm/SearchForm";
 
-const Header = ({ isLoggedIn }) => {
+const Header = ({ isLoggedIn, handleOpenPreloader, handleOpenSignInModal }) => {
   return (
     <header className="header">
       <div className="header__upper">
@@ -36,7 +37,9 @@ const Header = ({ isLoggedIn }) => {
               </div>
             </>
           ) : (
-            <button className="header__signin">Sign in</button>
+            <button className="header__signin" onClick={handleOpenSignInModal}>
+              Sign in
+            </button>
           )}
         </div>
       </div>
@@ -46,25 +49,8 @@ const Header = ({ isLoggedIn }) => {
           Find the latest news on any topic and save them in your personal
           account.
         </p>
-        <form className="header__form">
-          <input
-            className="header__form-input"
-            type="text"
-            placeholder="Enter topic"
-            minLength="1"
-            maxLength="30"
-            name="topic"
-            id="topic-search"
-          />
-          <button
-            className="header__form-button"
-            type="button"
-            aria-label="search"
-          >
-            Search
-          </button>
-        </form>
       </div>
+      <SearchForm handleOpenPreloader={handleOpenPreloader} />
     </header>
   );
 };

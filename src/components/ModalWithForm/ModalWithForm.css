@@ -1,0 +1,128 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../../vendor/Fonts/Roboto-Medium.ttf");
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__header {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.modal__content {
+  position: absolute;
+  background-color: white;
+  max-width: 390px;
+  width: 100%;
+  border-radius: 20px;
+  padding: 20px 20px;
+}
+
+.modal__close {
+  background-image: url("../../images/back.svg");
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.modal__input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid gray;
+  width: 100%;
+  padding-top: 8px;
+}
+
+.modal__submit:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal__label-container {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.modal__label {
+  color: #2f71e5;
+  padding-top: 24px;
+  width: 358px;
+}
+
+.modal__fieldset {
+  border: none;
+}
+
+.modal__buttons-down {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding-top: 35px;
+}
+
+.modal__or {
+  border: none;
+  background-color: white;
+  color: #2f71e5;
+  cursor: pointer;
+
+  width: 226px;
+  height: 20px;
+}
+
+.modal__submit {
+  border: none;
+  background-color: #e6e8eb;
+  color: #b6bcbf;
+  width: 360px;
+  height: 64px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.modal__link {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  left: 105px;
+  top: 70px;
+  font-size: 16px;
+}
+
+.modal__signin-button {
+  border: none;
+  background-color: white;
+  color: #2f71e5;
+  padding: 0 0 10px 0;
+}
