@@ -53,9 +53,9 @@
   padding-top: 8px;
 }
 
-.modal__submit:hover {
+/* .modal__submit:hover {
   background: rgba(0, 0, 0, 0.6);
-}
+} */
 
 .modal__label-container {
   display: flex;
@@ -98,8 +98,8 @@
 
 .modal__submit {
   border: none;
-  background-color: #e6e8eb;
-  color: #b6bcbf;
+  /* background-color: #2f71e5;
+  color: #ffffff; */
   width: 360px;
   height: 64px;
   border-radius: 30px;
@@ -125,4 +125,5 @@
   background-color: white;
   color: #2f71e5;
   padding: 0 0 10px 0;
+  cursor: pointer;
 }

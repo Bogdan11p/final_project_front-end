@@ -9,6 +9,7 @@ const ModalWithForm = ({
   name,
   onSubmit,
   altButtonClick,
+  isFormFilled,
 }) => {
   return (
     <div className={`modal modal__type_${name}`}>
@@ -24,7 +25,15 @@ const ModalWithForm = ({
             <h2 className="modal__header">{title}</h2>
             {children}
             <div className="modal__buttons-down">
-              <button className="modal__submit" type="submit">
+              <button
+                className="modal__submit"
+                type="submit"
+                disabled={!isFormFilled}
+                style={{
+                  backgroundColor: isFormFilled ? "#2F71E5" : "#E6E8EB",
+                  color: isFormFilled ? "white" : "#B6BCBF",
+                }}
+              >
                 {buttonText}
               </button>
               <button

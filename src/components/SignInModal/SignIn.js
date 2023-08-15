@@ -1,32 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const SignInModal = ({ onClose, handleSignIn, handleOpenRegisterModal }) => {
-  const [emailValue, setEmail] = useState("");
-  const [passwordValue, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  const isFormFilled = formData.email !== "" && formData.password !== "";
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
-    if (!emailValue || !passwordValue) {
-      return;
-    }
-    const user = { email: emailValue, password: passwordValue };
+    const user = {
+      email: formData.email,
+      password: formData.password,
+    };
     handleSignIn(user);
   };
 
-  const onEmailChange = (evt) => {
-    setEmail(evt.target.value);
-  };
+  /* const { email, password } = formData; */
 
-  const onPasswordChange = (evt) => {
-    setPassword(evt.target.value);
-  };
+  /* React.useEffect(() => {
+    setFormData[email]("");
+    setFormData[password]("");
+  }, []); */
 
-  React.useEffect(() => {
-    setEmail("");
-    setPassword("");
-  }, []);
   return (
     <ModalWithForm
       title="Sign in"
@@ -36,6 +42,7 @@ const SignInModal = ({ onClose, handleSignIn, handleOpenRegisterModal }) => {
       buttonText="Sign in"
       orButtonText="or Sign up"
       altButtonClick={handleOpenRegisterModal}
+      isFormFilled={isFormFilled}
     >
       <div className="modal__label-container">
         <label className="modal__label">
@@ -43,26 +50,28 @@ const SignInModal = ({ onClose, handleSignIn, handleOpenRegisterModal }) => {
           <input
             className="modal__input"
             type="email"
+            name="email"
+            pattern="[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}"
             placeholder="Enter email"
             required
-            name="email"
             id="input-Email"
             minLength="1"
             maxLength="30"
-            value={emailValue}
-            onChange={onEmailChange}
+            value={formData.email}
+            onChange={handleInputChange}
           />
         </label>
         <label className="modal__label">
           Password
           <input
+            type="password"
+            name="password"
             className="modal__input"
             placeholder="Enter password"
             required
-            name="password"
             id="input-password"
-            value={passwordValue}
-            onChange={onPasswordChange}
+            value={formData.password}
+            onChange={handleInputChange}
           />
         </label>
       </div>

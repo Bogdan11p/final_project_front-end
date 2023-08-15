@@ -1,44 +1,35 @@
 import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const RegisterModal = ({
-  onClose,
-  handleRegister,
-  handleOpenSignInModal,
-  handleOpenRegSuccesModal,
-}) => {
-  const [emailValue, setEmail] = useState("");
-  const [passwordValue, setPassword] = useState("");
-  const [usernameValue, setUsernameValue] = useState("");
+const RegisterModal = ({ onClose, handleRegister, handleOpenSignInModal }) => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    username: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  const isFormFilled =
+    formData.email !== "" &&
+    formData.password !== "" &&
+    formData.username !== "";
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const user = {
-      email: emailValue,
-      password: passwordValue,
-      username: usernameValue,
+      email: formData.email,
+      password: formData.password,
+      username: formData.username,
     };
     handleRegister(user);
-    handleOpenRegSuccesModal();
   };
 
-  const onEmailChange = (evt) => {
-    setEmail(evt.target.value);
-  };
-
-  const onPasswordChange = (evt) => {
-    setPassword(evt.target.value);
-  };
-
-  const onUsernameChange = (evt) => {
-    setUsernameValue(evt.target.value);
-  };
-
-  React.useEffect(() => {
-    setEmail("");
-    setPassword("");
-    setUsernameValue("");
-  }, []);
   return (
     <ModalWithForm
       title="Sign up"
@@ -48,6 +39,7 @@ const RegisterModal = ({
       buttonText="Sign up"
       orButtonText="or Sign in"
       altButtonClick={handleOpenSignInModal}
+      isFormFilled={isFormFilled}
     >
       <div className="modal__label-container">
         <label className="modal__label">
@@ -61,8 +53,8 @@ const RegisterModal = ({
             id="input-Email"
             minLength="1"
             maxLength="30"
-            value={emailValue}
-            onChange={onEmailChange}
+            value={formData.email}
+            onChange={handleInputChange}
           />
         </label>
         <label className="modal__label">
@@ -72,9 +64,10 @@ const RegisterModal = ({
             placeholder="Enter password"
             required
             name="password"
+            type="password"
             id="input-password"
-            value={passwordValue}
-            onChange={onPasswordChange}
+            value={formData.password}
+            onChange={handleInputChange}
           />
         </label>
         <label className="modal__label">
@@ -84,12 +77,12 @@ const RegisterModal = ({
             placeholder="Enter your username"
             type="text"
             required
-            name="name"
+            name="username"
             id="input-name"
             minLength="1"
             maxLength="30"
-            value={usernameValue}
-            onChange={onUsernameChange}
+            value={formData.username}
+            onChange={handleInputChange}
           />
         </label>
       </div>
