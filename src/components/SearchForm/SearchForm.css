@@ -5,10 +5,29 @@
   height: 64px;
 }
 
-.search__form-button {
+.search__form_button {
   width: 168px;
   height: 64px;
   background-color: rgb(62, 62, 244);
+  color: white;
+  border-radius: 60px;
+  border: none;
+  position: relative;
+  top: -64px;
+  right: -440px;
+
+  cursor: pointer;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.search__form_button-clicked {
+  width: 168px;
+  height: 64px;
+  background: #2a65cc;
   color: white;
   border-radius: 60px;
   border: none;

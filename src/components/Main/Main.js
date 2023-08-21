@@ -1,24 +1,26 @@
 import "../Main/Main.css";
 import React from "react";
-import Header from "../Header/Header";
+import Header from "../HeaderPage/HeaderPage";
 import About from "../About/About";
 import SearchForm from "../SearchForm/SearchForm";
 import Preloader from "../Preloader/Preloader";
 
 const Main = ({
   isLoggedIn,
-  handleOpenPreloader,
+  handleGetArticles,
   handleOpenSignInModal,
   isLoading,
+  handleOpenProfileArticles,
+  handleDeleteArticle,
 }) => {
   return (
     <div className="main">
       <div className="main__header">
         <Header
           isLoggedIn={isLoggedIn}
-          handleOpenPreloader={handleOpenPreloader}
           handleOpenSignInModal={handleOpenSignInModal}
           isLoading={isLoading}
+          handleOpenProfileArticles={handleOpenProfileArticles}
         />
       </div>
       <div className="main__page">
@@ -28,10 +30,7 @@ const Main = ({
           account.
         </p>
 
-        <SearchForm
-          handleOpenPreloader={handleOpenPreloader}
-          isLoading={isLoading}
-        />
+        <SearchForm handleGetArticles={handleGetArticles} />
       </div>
     </div>
   );

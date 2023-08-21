@@ -1,4 +1,5 @@
 import "../ModalWithForm/ModalWithForm.css";
+import { useEffect } from "react";
 
 const ModalWithForm = ({
   children,
@@ -11,8 +12,31 @@ const ModalWithForm = ({
   altButtonClick,
   isFormFilled,
 }) => {
+  const buttonClassName = isFormFilled
+    ? "modal__submit modal__submit-valid"
+    : "modal__submit";
+
+  const handleCloseOnOverlayClick = (event) => {
+    if (event.target === event.currentTarget) {
+      onClose();
+    }
+  };
+
+  useEffect(() => {
+    const close = (e) => {
+      if (e.keyCode === 27) {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
+
   return (
-    <div className={`modal modal__type_${name}`}>
+    <div
+      className={`modal modal__type_${name}`}
+      onClick={handleCloseOnOverlayClick}
+    >
       <div className="modal__content">
         <form className="modal__form" name={name} onSubmit={onSubmit}>
           <fieldset className="modal__fieldset">
@@ -26,13 +50,9 @@ const ModalWithForm = ({
             {children}
             <div className="modal__buttons-down">
               <button
-                className="modal__submit"
+                className={buttonClassName}
                 type="submit"
                 disabled={!isFormFilled}
-                style={{
-                  backgroundColor: isFormFilled ? "#2F71E5" : "#E6E8EB",
-                  color: isFormFilled ? "white" : "#B6BCBF",
-                }}
               >
                 {buttonText}
               </button>

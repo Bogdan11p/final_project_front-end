@@ -1,37 +1,49 @@
 import React, { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import { useForm } from "../../hooks/useForm";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
-const SignInModal = ({ onClose, handleSignIn, handleOpenRegisterModal }) => {
-  const [formData, setFormData] = useState({
+const SignInModal = ({
+  onClose,
+  handleSignIn,
+  handleOpenRegisterModal,
+
+  isLoading,
+  isActive,
+}) => {
+  const {
+    values,
+    handleInputChange,
+    setValues,
+    isFormValid,
+    setIsFormValid,
+    isInvalid,
+  } = useForm({
     email: "",
     password: "",
   });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-  const isFormFilled = formData.email !== "" && formData.password !== "";
+  React.useEffect(() => {
+    if (Object.values(isInvalid).every((item) => item === false)) {
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
+  }, [isInvalid, setIsFormValid]);
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
+  React.useEffect(() => {
+    if (isActive) {
+      setValues({
+        email: "",
+        password: "",
+      });
+    }
+  }, [isActive, setValues]);
 
-    const user = {
-      email: formData.email,
-      password: formData.password,
-    };
-    handleSignIn(user);
-  };
-
-  /* const { email, password } = formData; */
-
-  /* React.useEffect(() => {
-    setFormData[email]("");
-    setFormData[password]("");
-  }, []); */
+  function handleSubmit(e) {
+    handleSignIn(values);
+    e.preventDefault();
+  }
 
   return (
     <ModalWithForm
@@ -39,41 +51,52 @@ const SignInModal = ({ onClose, handleSignIn, handleOpenRegisterModal }) => {
       name="Sign in"
       onClose={onClose}
       onSubmit={handleSubmit}
-      buttonText="Sign in"
+      buttonText={isLoading ? "Signing in" : "Sign in"}
       orButtonText="or Sign up"
       altButtonClick={handleOpenRegisterModal}
-      isFormFilled={isFormFilled}
+      isFormFilled={isFormValid}
     >
       <div className="modal__label-container">
-        <label className="modal__label">
-          Email
-          <input
-            className="modal__input"
-            type="email"
-            name="email"
-            pattern="[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}"
-            placeholder="Enter email"
-            required
-            id="input-Email"
-            minLength="1"
-            maxLength="30"
-            value={formData.email}
-            onChange={handleInputChange}
+        <label className="modal__label">Email</label>
+        <input
+          className="modal__input"
+          type="email"
+          name="email"
+          pattern="[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}"
+          placeholder="Enter email"
+          required
+          id="input-Email"
+          minLength="1"
+          maxLength="30"
+          value={values.email}
+          onChange={handleInputChange}
+        />
+        {isInvalid.email && (
+          <ErrorMessage
+            errorMessage={"Invalid email address"}
+            className={"error-message error-message__signin-email"}
           />
-        </label>
-        <label className="modal__label">
-          Password
-          <input
-            type="password"
-            name="password"
-            className="modal__input"
-            placeholder="Enter password"
-            required
-            id="input-password"
-            value={formData.password}
-            onChange={handleInputChange}
+        )}
+
+        <label className="modal__label">Password</label>
+        <input
+          type="password"
+          name="password"
+          className="modal__input"
+          placeholder="Enter password"
+          required
+          id="input-password"
+          value={values.password}
+          onChange={handleInputChange}
+          minLength="4"
+          maxLength="35"
+        />
+        {isInvalid.password && (
+          <ErrorMessage
+            errorMessage={"Invalid password"}
+            className={`error-message error-message__signin-password`}
           />
-        </label>
+        )}
       </div>
     </ModalWithForm>
   );

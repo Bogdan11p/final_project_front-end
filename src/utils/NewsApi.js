@@ -1,24 +1,32 @@
+import { APIkey, baseUrl } from "./Constants";
+
 const currentDate = new Date();
 const currentDateString = currentDate.toLocaleDateString("ro-RO");
 const weekPriorDateString = new Date(
   currentDate.getTime() - 7 * 24 * 60 * 60 * 1000
 ).toLocaleDateString("ro-RO");
 
-const getNewsArticles = ({ apiKey, keyword }) => {
-  const newsApi = fetch(
-    `https://nomoreparties.co/news/v2/everything?q=${keyword}&from=${weekPriorDateString}&to=${currentDateString}&pageSize=100&apiKey=${apiKey}`,
-    {
+const newsApi = {
+  request: async (url, type = {}) => {
+    const res = await fetch(url, type);
+    if (res.ok) {
+      return await res.json();
+    }
+    const error = new Error(`Error ${res.status}: ${await res.text()}`);
+    throw error;
+  },
+
+  search: async ({ input }) => {
+    const url = `${baseUrl}/everything?q=${input}&from=${weekPriorDateString}&to=${currentDateString}&apiKey=${APIkey}&pageSize=100`;
+    const type = {
       method: "GET",
       headers: {
         "Content-type": "application/json",
+        authorization: `${APIkey}`,
       },
-    }
-  ).then((res) => {
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(res.status);
-  });
+    };
+    return await newsApi.request(url, type);
+  },
 };
 
-export default getNewsArticles;
+export default newsApi;

@@ -1,19 +1,9 @@
-@font-face {
-  font-family: "Roboto";
-  src: url("../../vendor/Fonts/Roboto-Medium.ttf");
-}
-
-@font-face {
-  font-family: "Roboto Slab";
-  src: url("../../vendor/Fonts/RobotoSlab-Regular.ttf");
-}
-
 .header {
   border-bottom: 1px solid rgba(248, 248, 248, 0.7);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -68,6 +58,13 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+.header__signedIn-articles {
+  background-color: transparent;
+  border: none;
+  color: #b6bcbf;
+  height: 60px;
 }
 
 .header__logout {

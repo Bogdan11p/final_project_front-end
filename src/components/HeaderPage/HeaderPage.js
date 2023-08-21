@@ -1,14 +1,14 @@
-import "../Header/Header.css";
+import "./HeaderPage.css";
 import React, { useContext } from "react";
-import headerLogo from "../../images/header-logo.svg";
+import headerLogoHome from "../../images/header-logo-home.svg";
 import { NavLink } from "react-router-dom";
-import logoutLogo from "../../images/logout.svg";
+import logoutLogoHome from "../../images/logout-home.svg";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 const Header = ({
   isLoggedIn,
   handleLogOut,
-  handleHomeClick,
+  handleOpenProfileArticles,
   handleOpenSignInModal,
 }) => {
   const currentUser = useContext(CurrentUserContext);
@@ -16,12 +16,7 @@ const Header = ({
     <header className="header">
       <div className="header__left">
         <NavLink exact to="/">
-          <img
-            className="header__logo"
-            src={headerLogo}
-            alt="news logo"
-            onClick={handleHomeClick}
-          />
+          <img className="header__logo" src={headerLogoHome} alt="news logo" />
         </NavLink>
       </div>
       <div className="header__right">
@@ -32,17 +27,22 @@ const Header = ({
           <>
             <div className="header__signedIn">
               <NavLink to="/saved-news" className="header__link">
-                <p className="header__signedIn-articles">Saved articles</p>
+                <button
+                  className="header__signedIn-articles"
+                  onClick={handleOpenProfileArticles}
+                >
+                  Saved articles
+                </button>
               </NavLink>
               <div className="header__logout">
-                <p className="header__logout-name">{currentUser.name}</p>
+                <p className="header__logout-name">{currentUser}</p>
                 <button
                   className="header__logout-button"
                   type="button"
                   aria-label="logout"
                   onClick={handleLogOut}
                 >
-                  <img src={logoutLogo} alt="logout logo" />
+                  <img src={logoutLogoHome} alt="logout logo" />
                 </button>
               </div>
             </div>

@@ -1,23 +1,36 @@
 import "../SearchForm/SearchForm.css";
-import React from "react";
+import React, { useState } from "react";
 
-const SearchForm = ({ handleOpenPreloader }) => {
+const SearchForm = ({ handleGetArticles }) => {
+  const [isSearchClicked, setIsSearchClicked] = useState(false);
+  const [isQuery, setIsQuery] = useState("");
+
+  const buttonClassName = isSearchClicked
+    ? "search__form_button-clicked"
+    : "search__form_button";
+
+  const handleSearchClick = () => {
+    setIsSearchClicked(true);
+    setTimeout(function () {
+      setIsSearchClicked(false);
+    }, 100);
+    handleGetArticles(`${isQuery.toLowerCase()}`);
+  };
+
   return (
     <form className="search__form">
       <input
         className="search__form-input"
         type="text"
         placeholder="Enter topic"
-        minLength="1"
-        maxLength="30"
-        name="topic"
-        id="topic-search"
+        onChange={(e) => setIsQuery(e.target.value)}
+        value={isQuery}
       />
       <button
-        className="search__form-button"
+        className={buttonClassName}
         type="button"
         aria-label="search"
-        onClick={handleOpenPreloader}
+        onClick={handleSearchClick}
       >
         Search
       </button>

@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "Roboto";
-  src: url("../../vendor/Fonts/Roboto-Medium.ttf");
-}
+
 
 .modal {
   position: fixed;
@@ -98,8 +95,8 @@
 
 .modal__submit {
   border: none;
-  /* background-color: #2f71e5;
-  color: #ffffff; */
+  color: #b6bcbf;
+  background: #e6e8eb;
   width: 360px;
   height: 64px;
   border-radius: 30px;
@@ -109,6 +106,12 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
+}
+
+.modal__submit-valid {
+  background-color: blue;
+  color: white;
+  cursor: pointer;
 }
 
 .modal__link {

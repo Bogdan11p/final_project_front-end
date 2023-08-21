@@ -1,43 +1,39 @@
 import { baseUrl } from "./Constants";
 import checkResponse from "./CheckResponse";
+import newsApi from "./NewsApi";
 
 const userApi = {
-  signin: (email, password) => {
-    return fetch(`${baseUrl}/signin`, {
+  request: async (url, type = {}) => {
+    const res = await fetch(url, type);
+    if (res.ok) {
+      return await res.json();
+    }
+    const error = new Error(`Error ${res.status}: ${await res.text()}`);
+    throw error;
+  },
+
+  signin: async ({ email, password }) => {
+    const url = `${baseUrl}/signin`;
+    const type = {
       method: "POST",
       headers: {
         "Content-type": "application/json",
       },
       body: JSON.stringify({ email, password }),
-    })
-      .then((res) => checkResponse(res))
-      .then((res) => res);
+    };
+    return await newsApi.request(url, type);
   },
 
-  signup: (email, password, username) => {
-    return fetch(`${baseUrl}/signup`, {
+  signUp: async ({ email, password, name }) => {
+    const url = `${baseUrl}/signup`;
+    const type = {
       method: "POST",
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ email, password, username }),
-    })
-      .then((res) => checkResponse(res))
-      .then((res) => res);
-  },
-
-  checkTokenValidity: (token) => {
-    return fetch(`${baseUrl}/users/me`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${token}`,
-      },
-    })
-      .then((res) => checkResponse(res))
-      .then((data) => {
-        return data;
-      });
+      body: JSON.stringify({ email, password, name }),
+    };
+    return await newsApi.request(url, type);
   },
 };
 

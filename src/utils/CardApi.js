@@ -1,70 +1,79 @@
 import checkResponse from "./CheckResponse";
 import { baseUrl, APIkey } from "./Constants";
-
-export const getArticle = (key) => {
-  try {
-    const article = localStorage.getItem(key);
-    return article;
-  } catch (error) {
-    console.error("Error retrieving item from local storage:", error);
-    return null;
-  }
-};
+import newsApi from "./NewsApi";
 
 const cardApi = {
-  getUser: (token) => {
-    return (
-      fetch(`${baseUrl}/users/me`),
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          authorization: `Bearer ${token}`,
-        },
-      }.then(checkResponse)
-    );
+  request: async (url, type = {}) => {
+    const res = await fetch(url, type);
+    if (res.ok) {
+      return await res.json();
+    }
+    const error = new Error(`Error ${res.status}: ${await res.text()}`);
+    throw error;
   },
 
-  addArticle: (
-    { keyword, title, publishedAt, description, source, link, urlToImage },
-    token
-  ) => {
-    return fetch(`${baseUrl}/articles`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({
-        keyword,
-        title,
-        publishedAt,
-        description,
-        source,
-        link,
-        urlToImage,
-      }),
-    });
-  },
-
-  getArticles: (token) => {
-    return fetch(`${baseUrl}/articles`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${token}`,
-      },
-    });
-  },
-
-  deleteArticle: (articleId, token) => {
-    return fetch(`${baseUrl}/articles/${articleId}`, {
+  deleteArticle: async (articleId, token) => {
+    const url = `${baseUrl}/articles/${articleId}`;
+    const type = {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
         authorization: `Bearer ${token}`,
       },
-    });
+    };
+    return await newsApi.request(url, type);
+  },
+
+  checkTokenValidity: async (token) => {
+    const url = `${baseUrl}/users/me`;
+    const type = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+    };
+    return await newsApi.request(url, type);
+  },
+
+  getArticles: async (token) => {
+    const url = `${baseUrl}/articles`;
+    const type = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+    };
+    return await newsApi.request(url, type);
+  },
+
+  getUser: async (token) => {
+    const url = `${baseUrl}/users/me`;
+    const type = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+    };
+    return await newsApi.request(url, type);
+  },
+
+  saveArticle: async (
+    { keyword, title, text, date, source, link, image },
+    token
+  ) => {
+    const url = `${baseUrl}/articles`;
+    const type = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ keyword, title, text, date, source, link, image }),
+    };
+    return await newsApi.request(url, type);
   },
 };
 
