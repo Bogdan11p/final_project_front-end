@@ -4,7 +4,7 @@ const baseUrl =
     ? "https://api.news-explorer.fcsb.com/"
     : "http://localhost:3001";
 
-const cardItems = {
+const articleItems = {
   status: "ok",
   totalResults: 8677,
   articles: [
@@ -137,7 +137,7 @@ const handleDateFormat = (unformattedDate) => {
 };
 
 module.exports = {
-  cardItems,
+  articleItems,
   handleDateFormat,
   APIkey,
   baseUrl,

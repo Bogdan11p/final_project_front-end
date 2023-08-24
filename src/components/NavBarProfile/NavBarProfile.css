@@ -1,0 +1,176 @@
+.navbar__profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
+  height: 80px;
+}
+
+.navbar__profile-title {
+  padding-left: 60px;
+  width: 137px;
+  height: 79px;
+}
+
+.navbar__profile-buttons {
+  padding-right: 60px;
+}
+
+.navbar__profile-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar__profile-page {
+  border: none;
+  background: transparent;
+  color: gray;
+  height: 79px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.navbar__profile-saved-articles {
+  border: none;
+  background: transparent;
+  color: black;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+
+  border-bottom: 3px black solid;
+
+  cursor: pointer;
+  height: 79px;
+}
+
+.navbar__profile-logout-button {
+  background: transparent;
+  color: black;
+  display: flex;
+  align-items: center;
+  border: 1px black solid;
+  border-radius: 20px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.navbar__profile-mobileMenu {
+  visibility: hidden;
+}
+
+.mobileMenu__profile-lower {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 155px;
+}
+
+.mobileMenu__profile-upper {
+  display: flex;
+  justify-content: space-between;
+  width: 320px;
+  height: 56px;
+  position: relative;
+  bottom: -5px;
+  border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
+  margin: 0 20px 0 20px;
+}
+
+.mobileMenu__profile-title {
+  margin-left: 15px;
+  text-decoration: none;
+  position: relative;
+  top: 17px;
+}
+
+.mobileMenu__profile-close {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.mobileMenu__profile-page {
+  color: white;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 56px;
+  margin: 0;
+  height: 40px;
+  cursor: pointer;
+}
+
+.mobileMenu__profile-savedArticles {
+  color: white;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 56px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+.mobileMenu__profile-logout-button {
+  background: transparent;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px white solid;
+  border-radius: 20px;
+  width: 288px;
+  height: 40px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 0;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__profile-title {
+    padding-left: 40px;
+  }
+
+  .navbar__profile-buttons {
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navbar__profile-mobileMenu {
+    visibility: visible;
+    position: relative;
+    left: 144px;
+  }
+
+  .navbar__profile-title {
+    padding-left: 10px;
+  }
+
+  .navbar__profile-buttons {
+    visibility: hidden;
+    padding: 0;
+    position: relative;
+    right: 120px;
+  }
+}

@@ -1,3 +1,5 @@
+import "../HeaderProfile/HeaderProfile.css";
+
 import React, { useContext } from "react";
 import NavBarProfile from "../NavBarProfile/NavBarProfile";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
@@ -54,21 +56,22 @@ const HeaderProfile = ({
   const keywordString = getKeywordString(keywords);
 
   return (
-    <header className="header-profile">
+    <header className="header__profile">
       <NavBarProfile
         handleProfileLeave={handleProfileLeave}
         handleSignOut={handleSignOut}
         handleVisibleReset={handleVisibleReset}
       />
-      <h1 className="header-profile__title">Saved articles</h1>
-      <h2 className="header-profile__articles">{`${currentUser}, you have ${savedNewsArticles.length} saved articles`}</h2>
-      <div className="header-profile__container">
-        <h2 className="header-profile__keywords">
-          By keywords:{" "}
-          <span className="header-profile__examples">
+
+      <h2 className="header__profile-title">Saved articles</h2>
+      <h3 className="header__profile-articles">{`${currentUser}, you have ${savedNewsArticles.length} saved articles`}</h3>
+      <div className="header__profile-container">
+        <p className="header__profile-keywords">
+          By keywords:{""}
+          <span className="header__profile-examples">
             {keywordString ? keywordString : ""}
           </span>{" "}
-        </h2>
+        </p>
       </div>
     </header>
   );

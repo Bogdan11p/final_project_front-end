@@ -1,3 +1,4 @@
+import "../NavBarPage/NavBarPage.css";
 import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
@@ -35,19 +36,15 @@ const NavBarPage = ({ handleSignIn, handleSignOut, handleProfileIn }) => {
     }
   };
 
-  const handleMoblieMenuLoggedInSignOut = () => {
-    handleMobileMenuLoggedInOff();
-    handleSignOut();
-  };
-
   return (
     <>
       {currentUser === null ? (
-        <div className="navbar__notLoggedIn">
+        <section className="navbar__notLoggedIn">
           <img
             className="navbar__notLoggedIn-title"
             src={pageLogo}
             id="home"
+            alt="page logo"
           ></img>
           <img
             className="navbar__notLoggedIn-mobileMenu"
@@ -68,10 +65,14 @@ const NavBarPage = ({ handleSignIn, handleSignOut, handleProfileIn }) => {
               </button>
             </div>
           </div>
-        </div>
+        </section>
       ) : (
-        <div className="navbar__loggedIn">
-          <img className="navbar__loggedIn-title" src={pageLogo} />
+        <section className="navbar__loggedIn">
+          <img
+            className="navbar__loggedIn-title"
+            src={pageLogo}
+            alt="page logo"
+          />
           <img
             className="navbar__loggedIn-mobileMenu"
             src={mobileMenuPage}
@@ -91,33 +92,34 @@ const NavBarPage = ({ handleSignIn, handleSignOut, handleProfileIn }) => {
                   Saved Articles
                 </button>
               </NavLink>
-              <div className="navbar__loogedIn-logout">
-                <p className="navbar__loggedIn-logout-name">{currentUser}</p>
-                <button
-                  className="navbar__loggedIn-logout-button"
-                  type="button"
-                  aria-label="logout"
-                  onClick={handleSignOut}
-                >
-                  <img
-                    className=" mobileMenu__loggedIn-logout-image"
-                    src={logoOutLogoPage}
-                    alt="logo out logo page"
-                  />
-                </button>
-              </div>
+
+              <button
+                className="navbar__loggedIn-logout-button"
+                type="button"
+                aria-label="logout"
+                onClick={handleSignOut}
+              >
+                {`${currentUser}`}{" "}
+                <img
+                  className=" mobileMenu__loggedIn-logout-image"
+                  src={logoOutLogoPage}
+                  alt="logo out logo page"
+                />
+              </button>
             </div>
           </div>
-        </div>
+        </section>
       )}
       {isMobileMenuNotLoggedIn && (
-        <div className="mobileMenu" onClick={handleCloseOnOverlay}>
+        <section className="mobileMenu" onClick={handleCloseOnOverlay}>
           <div className="mobileMenu__notLoggedIn-upper">
             <img
               className="mobileMenu__notLoggedIn-title"
               src={pageLogo}
               id="home"
+              alt="page logo"
             />
+
             <img
               className="mobileMenu__notLoggedIn-close"
               src={closeButton}
@@ -134,16 +136,18 @@ const NavBarPage = ({ handleSignIn, handleSignOut, handleProfileIn }) => {
               Sign in
             </button>
           </div>
-        </div>
+        </section>
       )}
       {isMobileMenuLoggedIn && (
-        <div className="mobileMenu" onClick={handleCloseOnOverlay}>
-          <div className="mobileMene__loggedIn-upper">
+        <section className="mobileMenu" onClick={handleCloseOnOverlay}>
+          <div className="mobileMenu__loggedIn-upper">
             <img
               className="mobileMenu__loggedIn-title"
               src={pageLogo}
               id="home"
+              alt="page logo"
             />
+
             <img
               className="mobileMenu__loggedIn-close"
               src={closeButton}
@@ -153,28 +157,28 @@ const NavBarPage = ({ handleSignIn, handleSignOut, handleProfileIn }) => {
           </div>
           <div className="mobileMenu__loggedIn-lower">
             <h2 className="mobileMenu__loggedIn-page">Home</h2>
-            <NavLink to="/saved-news">
+
+            <NavLink to="/saved-news" style={{ textDecoration: "none" }}>
               <button className="mobileMenu__loggedIn-savedArticles">
                 Saved Articles
               </button>
             </NavLink>
-            <div className="mobileMenu__loggedIn-logout">
-              <p className="mobileMenu__loggedIn-logout-name">{currentUser}</p>
-              <button
-                className="mobileMenu__loggedIn-logout-button"
-                type="button"
-                aria-label="logout"
-                onClick={handleSignOut}
-              >
-                <img
-                  className="mobileMenu__loggedIn-logout-image"
-                  src={logoOutLogoPage}
-                  alt="logo out logo page"
-                />
-              </button>
-            </div>
+
+            <button
+              className="mobileMenu__loggedIn-logout-button"
+              type="button"
+              aria-label="logout"
+              onClick={handleSignOut}
+            >
+              {`${currentUser}`}{" "}
+              <img
+                className="mobileMenu__loggedIn-logout-image"
+                src={logoOutLogoPage}
+                alt="logo out logo page"
+              />
+            </button>
           </div>
-        </div>
+        </section>
       )}
     </>
   );

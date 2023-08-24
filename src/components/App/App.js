@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Swtich, Redirect, useNavigate } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 import "./App.css";
 
 import Footer from "../Footer/Footer";
@@ -22,13 +22,14 @@ function App() {
   const [showsOnProfile, setShowsOnProfile] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [keyword, setKeyword] = useState(null);
-  const [newCards, setNewCards] = useState({});
+  const [newsCards, setNewsCards] = useState({});
   const [visible, setVisible] = useState(3);
   const [savedNewsArticles, setSavedNewsArticles] = useState([]);
   const [selectedArticleId, setSelectedArticleId] = useState(null);
+  // eslint-disable-next-line
   const [authError, setAuthError] = useState("");
 
-  const navigate = useNavigate();
+  const history = useHistory();
   const token = localStorage.getItem("jwt");
 
   // useEffect
@@ -78,7 +79,7 @@ function App() {
     newsApi
       .search({ input })
       .then((data) => {
-        setNewCards(data.articles);
+        setNewsCards(data.articles);
         localStorage.setItem("articles", JSON.stringify(data.articles));
         localStorage.setItem("keyword", keyword);
       })
@@ -181,10 +182,6 @@ function App() {
 
   // modals
 
-  const handleOpenSearchLoader = () => {
-    setActiveModal("preloader");
-  };
-
   const handleOpenRegsitrationModal = () => {
     setActiveModal("Registration");
   };
@@ -209,44 +206,92 @@ function App() {
     setCurrentUser("");
     localStorage.clear();
     handleProfileLeave();
-    navigate("/");
+    history.push("/");
   };
 
   const handleProfileLeave = () => {
     setShowsOnProfile(false);
-    setNewCards({});
-    console.log("profile false");
+    setNewsCards({});
+  };
+
+  const handleVisibleReset = () => {
+    setVisible(3);
+  };
+
+  const handleSavedArticlesButton = () => {
+    setShowsOnProfile(true);
+    console.log(`shows on profile`);
+  };
+
+  const showMoreArticles = () => {
+    setVisible((prevValue) => prevValue + 3);
   };
 
   return (
-    <div>
-      <Footer />
-      {activeModal === "SignIn" && (
-        <SignInModal
-          onClose={handleCloseModal}
-          handleOpenRegisterModal={handleOpenRegsitrationModal}
-          handleSignIn={handleSignIn}
-          isLoading={isLoading}
-          isActive={true}
-        />
-      )}
-      {activeModal === "Registration" && (
-        <RegisterModal
-          onClose={handleCloseModal}
-          handleOpenSignInModal={handleOpenLogInModal}
-          handleOpenRegSuccesModal={handleOpenRegSuccesModal}
-          handleRegister={handleRegister}
-          isActive={true}
-          handleOpenRegisterSuccesModal={handleButtonRegClick}
-        />
-      )}
-      {activeModal === "RegSucces" && (
-        <RegSuccesModal
-          onClose={handleCloseModal}
-          handleOpenSignInModal={handleOpenLogInModal}
-        />
-      )}
-    </div>
+    <CurrentUserContext.Provider value={currentUser}>
+      <div>
+        <Switch>
+          <ProtectedRoute currentUser={currentUser} path="/saved-news">
+            <Profile
+              handleDeleteArticle={handleDeleteArticle}
+              handleProfileLeave={handleProfileLeave}
+              handleSavedArticlesButton={handleSavedArticlesButton}
+              handleSaveArticle={handleSaveArticle}
+              handleSignOut={handleSignOut}
+              handleVisibleReset={handleVisibleReset}
+              isLoading={isLoading}
+              showsOnProfile={showsOnProfile}
+              keyword={keyword}
+              savedNewsArticles={savedNewsArticles}
+              visible={visible}
+            />
+          </ProtectedRoute>
+          <Route path="/">
+            <Page
+              handleDeleteArticle={handleDeleteArticle}
+              handleGetArticles={handleGetArticles}
+              handleSavedArticlesButton={handleSavedArticlesButton}
+              handleSaveArticle={handleSaveArticle}
+              handleSignIn={handleOpenLogInModal}
+              handleSignOut={handleSignOut}
+              isLoading={isLoading}
+              newsCards={newsCards}
+              savedNewsArticles={savedNewsArticles}
+              showMoreArticles={showMoreArticles}
+              visible={visible}
+              keyword={keyword}
+            />
+          </Route>
+        </Switch>
+        <Footer />
+
+        {activeModal === "SignIn" && (
+          <SignInModal
+            onClose={handleCloseModal}
+            handleOpenRegisterModal={handleOpenRegsitrationModal}
+            handleSignIn={handleSignIn}
+            isLoading={isLoading}
+            isActive={true}
+          />
+        )}
+        {activeModal === "Registration" && (
+          <RegisterModal
+            onClose={handleCloseModal}
+            handleOpenSignInModal={handleOpenLogInModal}
+            handleOpenRegSuccesModal={handleOpenRegSuccesModal}
+            handleRegister={handleRegister}
+            isActive={true}
+            handleOpenRegisterSuccesModal={handleButtonRegClick}
+          />
+        )}
+        {activeModal === "RegSucces" && (
+          <RegSuccesModal
+            onClose={handleCloseModal}
+            handleOpenSignInModal={handleOpenLogInModal}
+          />
+        )}
+      </div>
+    </CurrentUserContext.Provider>
   );
 }
 

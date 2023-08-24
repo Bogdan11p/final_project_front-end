@@ -1,5 +1,4 @@
-import checkResponse from "./CheckResponse";
-import { baseUrl, APIkey } from "./Constants";
+import { baseUrl } from "./Constants";
 import newsApi from "./NewsApi";
 
 const cardApi = {

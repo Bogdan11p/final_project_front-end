@@ -1,0 +1,24 @@
+.search {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.search__title {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .search {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .search {
+    padding-left: 10px;
+  }
+}

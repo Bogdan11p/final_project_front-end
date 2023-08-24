@@ -1,3 +1,4 @@
+import "../NavBarProfile/NavBarProfile.css";
 import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
@@ -5,6 +6,7 @@ import logOutLogoProfile from "../../images/logout-profile.svg";
 import logOutLogoPage from "../../images/logout-home.svg";
 import closeButton from "../../images/close-icon.svg";
 import mobileMenuProfile from "../../images/mobile-menu-profile.svg";
+import pageLogo from "../../images/header-logo-home.svg";
 import profileLogo from "../../images/header-logo-profile.svg";
 
 const NavBarProfile = ({
@@ -37,13 +39,14 @@ const NavBarProfile = ({
 
   return (
     <>
-      <div className="navbar__profile">
+      <section className="navbar__profile">
         <NavLink to="/">
           <img
             className="navbar__profile-title"
             src={profileLogo}
             id="home"
             onClick={handleGoToPage}
+            alt="profile logo"
           ></img>
         </NavLink>
         <img
@@ -60,32 +63,35 @@ const NavBarProfile = ({
             <button className="navbar__profile-saved-articles">
               Saved Articles
             </button>
-            <div className="navbar__profile-logout">
-              <p className="navbar__profile-logout-name">{currentUser}</p>
-              <button
-                className="navbar__profile-logout-button"
-                type="button"
-                aria-label="logout"
-                onClick={handleSignOut}
-              >
-                <img
-                  className="navbar__profile-logout-image"
-                  src={logOutLogoProfile}
-                  alt="logo out logo page"
-                />
-              </button>
-            </div>
+
+            <button
+              className="navbar__profile-logout-button"
+              type="button"
+              aria-label="logout"
+              onClick={handleSignOut}
+            >
+              {`${currentUser}`}{" "}
+              <img
+                className="navbar__profile-logout-image"
+                src={logOutLogoProfile}
+                alt="logo out logo page"
+              />
+            </button>
           </div>
         </div>
-      </div>
+      </section>
+
       {isMobileMenuProfile && (
-        <div className="mobileMenu" onClick={handleCloseOnOverlay}>
-          <div className="mobileMene__profile-upper">
-            <img
-              className="mobileMenu__profile-title"
-              src={profileLogo}
-              id="home"
-            />
+        <section className="mobileMenu" onClick={handleCloseOnOverlay}>
+          <div className="mobileMenu__profile-upper">
+            <NavLink to="/">
+              <img
+                className="mobileMenu__profile-title"
+                src={pageLogo}
+                id="home"
+                alt="page logo"
+              />
+            </NavLink>
             <img
               className="mobileMenu__profile-close"
               src={closeButton}
@@ -94,29 +100,32 @@ const NavBarProfile = ({
             />
           </div>
           <div className="mobileMenu__profile-lower">
-            <h2 className="mobileMenu__profile-page">Home</h2>
-            <NavLink to="/saved-news">
+            <NavLink to="/" style={{ textDecoration: "none" }}>
+              <h2 className="mobileMenu__profile-page" onClick={handleGoToPage}>
+                Home
+              </h2>
+            </NavLink>
+            <NavLink to="/saved-news" style={{ textDecoration: "none" }}>
               <button className="mobileMenu__loggedIn-savedArticles">
                 Saved Articles
               </button>
             </NavLink>
-            <div className="mobileMenu__profile-logout">
-              <p className="mobileMenu__profile-logout-name">{currentUser}</p>
-              <button
-                className="mobileMenu__profile-logout-button"
-                type="button"
-                aria-label="logout"
-                onClick={handleSignOut}
-              >
-                <img
-                  className="mobileMenu__profile-logout-image"
-                  src={logOutLogoProfile}
-                  alt="logo out logo page"
-                />
-              </button>
-            </div>
+
+            <button
+              className="mobileMenu__profile-logout-button"
+              type="button"
+              aria-label="logout"
+              onClick={handleSignOut}
+            >
+              {`${currentUser}`}{" "}
+              <img
+                className="mobileMenu__profile-logout-image"
+                src={logOutLogoPage}
+                alt="logo out logo page"
+              />
+            </button>
           </div>
-        </div>
+        </section>
       )}
     </>
   );

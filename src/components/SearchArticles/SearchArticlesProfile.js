@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import CurrentUserContext from "../../contexts/CurrentUserContext";
-import NothingFound from "../NothingFound/NothingFound";
+import "../SearchArticles/SearchArticles.css";
+
+import React, { useEffect } from "react";
+
 import NewsCardList from "../NewCardList/NewCardList";
 
 const SearchArticlesProfile = ({
@@ -20,7 +21,7 @@ const SearchArticlesProfile = ({
   useEffect(() => {
     handleSavedArticlesButton();
     console.log("showsOnProfile is true");
-  }, []);
+  }, [handleSavedArticlesButton]);
 
   return (
     <div className="search">

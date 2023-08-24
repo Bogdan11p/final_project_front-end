@@ -1,0 +1,70 @@
+.header__profile-title {
+  color: #1a1b2280;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  padding-left: 60px;
+}
+
+.header__profile-articles {
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 46px;
+  height: 92px;
+  width: 530px;
+  margin: 0;
+  padding-left: 60px;
+}
+
+.header__profile-keywords {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  padding-left: 60px;
+}
+
+.header__profile-examples {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .header__profile-title {
+    font-size: 14px;
+    padding-left: 40px;
+  }
+
+  .header__profile-articles {
+    font-size: 30px;
+    line-height: 34px;
+    height: 68px;
+    padding-left: 40px;
+  }
+
+  .header__profile-keywords {
+    padding-left: 40px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__profile-title {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+
+  .header__profile-articles {
+    padding-left: 10px;
+    font-size: 30px;
+    width: 288px;
+  }
+
+  .header__profile-keywords {
+    padding-left: 10px;
+    font-size: 18px;
+  }
+}

@@ -1,5 +1,5 @@
 import { baseUrl } from "./Constants";
-import checkResponse from "./CheckResponse";
+
 import newsApi from "./NewsApi";
 
 const userApi = {

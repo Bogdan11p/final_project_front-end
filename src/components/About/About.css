@@ -20,3 +20,82 @@
   margin-top: 85px;
   width: 600px;
 }
+
+.about__right-title {
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.about__right-subtitle {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    height: 354px;
+  }
+
+  .about__left {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 232px;
+    height: 232px;
+  }
+
+  .about__left-picture {
+    width: 232px;
+    height: 232px;
+  }
+
+  .about__right {
+    margin-top: 25px;
+    width: 424px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about__right-subtitle {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: 752px;
+    align-items: center;
+    padding-top: 30px;
+  }
+  .about__left {
+    margin: 0;
+    height: 35%;
+    width: 272px;
+    height: 272px;
+  }
+
+  .about__left-picture {
+    width: 272px;
+    height: 272px;
+  }
+
+  .about__right {
+    margin-top: 10px;
+    height: 65%;
+    width: 288px;
+  }
+
+  .about__right-title {
+    width: 288px;
+  }
+
+  .about__right-subtitle {
+    width: 288px;
+  }
+}

@@ -1,12 +1,12 @@
 import "../Preloader/Preloader.css";
 import React from "react";
 
-const Preloader = ({}) => {
+const Preloader = () => {
   return (
-    <div className="preloader">
-      <div className="preloader__cirlce"></div>
+    <section className="preloader">
+      <i className="preloader__cirlce"></i>
       <p className="preloader__description">Searching for news...</p>
-    </div>
+    </section>
   );
 };
 

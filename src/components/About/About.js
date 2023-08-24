@@ -4,7 +4,7 @@ import authorPic from "../../images/author.jpg";
 
 const About = () => {
   return (
-    <div className="about">
+    <section className="about">
       <div className="about__left">
         <img className="about__left-picture" src={authorPic} alt="author pic" />
       </div>
@@ -17,7 +17,7 @@ const About = () => {
           there, and how you can help potential customers.
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 

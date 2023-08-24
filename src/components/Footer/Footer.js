@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <section className="footer">
       <div className="footer__left">
         <p className="footer__left-description">
           © 2023 Supersite, Powered by News API
@@ -29,7 +29,7 @@ const Footer = () => {
           <img className="footer__link-fb" src={fbPic} alt="fb logo" />
         </NavLink>
       </div>
-    </div>
+    </section>
   );
 };
 export default Footer;

@@ -1,9 +1,9 @@
 import React from "react";
-import CurrentUserContext from "../../contexts/CurrentUserContext";
+
 import NothingFound from "../NothingFound/NothingFound";
 import NewsCardList from "../NewCardList/NewCardList";
 
-const SearchArticlesHome = ({
+const SearchArticlesPage = ({
   handleDeleteArticle,
   handleSaveArticle,
   showsOnProfile,
@@ -13,7 +13,7 @@ const SearchArticlesHome = ({
   showMoreArticles,
   visible,
 }) => {
-  const searchCardsClassname =
+  const searchArticlesClassname =
     visible === 3 ? "search__cards" : "search__cards__active";
 
   const searchContainerClassname =
@@ -49,4 +49,4 @@ const SearchArticlesHome = ({
   );
 };
 
-export default SearchArticlesHome;
+export default SearchArticlesPage;

@@ -11,6 +11,29 @@ const Profile = ({
   isLoading,
   showsOnProfile,
   keyword,
-  handleSavedNewsArticles,
+  savedNewsArticles,
   visible,
-}) => {};
+}) => {
+  return (
+    <>
+      <HeaderProfile
+        handleProfileLeave={handleProfileLeave}
+        handleSignOut={handleSignOut}
+        handleVisibleReset={handleVisibleReset}
+        savedNewsArticles={savedNewsArticles}
+      />
+      <MainProfile
+        handleDeleteArticle={handleDeleteArticle}
+        handleSaveArticle={handleSaveArticle}
+        handleSavedArticlesButton={handleSavedArticlesButton}
+        isLoading={isLoading}
+        showsOnProfile={showsOnProfile}
+        keyword={keyword}
+        savedNewsArticles={savedNewsArticles}
+        visible={visible}
+      />
+    </>
+  );
+};
+
+export default Profile;

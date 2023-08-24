@@ -1,0 +1,324 @@
+/* notLoggedIn */
+
+.navbar__notLoggedIn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 60px;
+  padding-right: 60px;
+  border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
+  height: 80px;
+}
+
+.navbar__notLoggedIn-mobileMenu {
+  visibility: hidden;
+}
+
+.navbar__notLoggedIn-page {
+  border: none;
+  background: transparent;
+  color: white;
+  height: 79px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.navbar__notLoggedIn-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.navbar__notLoggedIn-signin {
+  background: transparent;
+  color: white;
+  display: inline-block;
+  align-items: center;
+  border: 1px white solid;
+  border-radius: 20px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+  width: 176px;
+  height: 48px;
+}
+
+/* loggedIn */
+
+.navbar__loggedIn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 60px;
+  padding-right: 60px;
+  border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
+  height: 80px;
+}
+
+.navbar__loggedIn-page {
+  border: none;
+  background: transparent;
+  color: white;
+  height: 79px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+
+  border-bottom: 3px white solid;
+}
+
+.navbar__loggedIn-page-container {
+  display: flex;
+  gap: 10px;
+  height: 79px;
+  align-items: center;
+}
+
+.navbar__loggedIn-title {
+  width: 200px;
+  height: 24px;
+  align-self: center;
+}
+
+.navbar__loggedIn-mobileMenu {
+  width: 24px;
+  height: 24px;
+  align-self: center;
+}
+
+.navbar__loggedIn-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__loggedIn-saved-articles {
+  border: none;
+  background: transparent;
+  color: #b6bcbf;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+  height: 79px;
+}
+
+.navbar__loggedIn-logout-button {
+  background: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  border: 1px white solid;
+  border-radius: 20px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.navbar__loggedIn-mobileMenu {
+  visibility: hidden;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1b22;
+  height: 230px;
+  width: 320px;
+  z-index: 1;
+}
+
+.mobileMenu__notLoggedIn-upper {
+  display: flex;
+  justify-content: space-between;
+  width: 320px;
+  height: 56px;
+  position: relative;
+  bottom: 30px;
+  border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
+  margin: 0 20px 0 20px;
+}
+
+.mobileMenu__notLoggedIn-title {
+  margin-left: 15px;
+}
+
+.mobileMenu__notLoggedIn-close {
+  margin-right: 15px;
+  position: relative;
+  right: 5px;
+}
+
+.mobileMenu__notLoggedIn-page {
+  color: white;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 56px;
+  margin: 0;
+}
+
+.mobileMenu__notLoggedIn-signin {
+  background: transparent;
+  color: white;
+  display: inline-block;
+  align-items: center;
+  border: 1px white solid;
+  border-radius: 20px;
+  width: 288px;
+  height: 56px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.mobileMenu__loggedIn-upper {
+  display: flex;
+  justify-content: space-between;
+  width: 320px;
+  height: 56px;
+  position: relative;
+  bottom: -5px;
+  border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
+  margin: 0 20px 0 20px;
+}
+
+.mobileMenu__loggedIn-lower {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 155px;
+}
+
+.mobileMenu__loggedIn-title {
+  margin-left: 15px;
+}
+
+.mobileMenu__loggedIn-close {
+  margin-right: 15px;
+  position: relative;
+  right: 10px;
+  cursor: pointer;
+}
+
+.mobileMenu__loggedIn-page {
+  color: white;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 56px;
+  margin: 0;
+  height: 40px;
+}
+
+.mobileMenu__loggedIn-savedArticles {
+  color: white;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 56px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+.mobileMenu__loggedIn-logout-button {
+  background: transparent;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px white solid;
+  border-radius: 20px;
+  width: 288px;
+  height: 40px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 0;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__notLoggedIn {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  /* loggedIn */
+
+  .navbar__loggedIn {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navbar__notLoggedIn {
+    padding: 0 20px 0 20px;
+    position: relative;
+  }
+
+  .navbar__notLoggedIn-buttons {
+    visibility: hidden;
+    position: relative;
+    right: 150px;
+  }
+
+  .navbar__notLoggedIn-mobileMenu {
+    visibility: visible;
+    position: relative;
+    left: 120px;
+  }
+
+  /* loggedIn */
+
+  .navbar__loggedIn-buttons {
+    visibility: hidden;
+    position: relative;
+    right: 130px;
+  }
+
+  .navbar__loggedIn-mobileMenu {
+    visibility: visible;
+  }
+
+  .navbar__loggedIn {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    position: relative;
+  }
+
+  .navbar__loggedIn-mobileMenu {
+    position: relative;
+    left: 100px;
+  }
+  .mobilrMenu {
+  }
+}
