@@ -24,37 +24,17 @@
   line-height: 24px;
 }
 
-.search__form_button-clicked {
-  width: 168px;
-  height: 64px;
-  background: #2a65cc;
-  color: white;
-  border-radius: 60px;
-  border: none;
-  position: relative;
-  top: -64px;
-  right: -440px;
-
-  cursor: pointer;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .search__form-input {
-  width: 580px;
-  height: 62px;
+  width: 560px;
+  height: 61px;
   border: none;
   border-radius: 50px;
   outline: none;
-
+  padding-left: 20px;
   font-size: large;
 }
 
 .search__form-input::placeholder {
-  padding-left: 20px;
   outline: none;
 }
 
@@ -93,7 +73,7 @@
   }
 
   .search__form-input {
-    width: 288px;
+    width: 268px;
     height: 56px;
 
     margin-top: 0;

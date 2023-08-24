@@ -1,0 +1,173 @@
+.card {
+  width: 400px;
+  height: 576px;
+  border-radius: 20px;
+  background: white;
+  position: relative;
+}
+
+.card__image {
+  width: 400px;
+  height: 272px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card__date {
+  margin: 20px 0 0 24px;
+  color: #b6bcbf;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.card__title {
+  margin: 12px 24px 16px;
+  color: #1a1b22;
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 30px;
+  overflow: hidden;
+
+  height: 90px;
+  text-overflow: ellipsis;
+}
+
+.card__description {
+  width: 352px;
+  height: 90px;
+  margin: 16px 24px 18px;
+  text-overflow: ellipsis;
+  color: var(--main-primary, #1a1b22);
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.card__author {
+  width: 350px;
+  height: 20px;
+  margin: 0 auto 24px 24px;
+  color: #b6bcbf;
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.card__button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card__button-inactive {
+  background-image: url("../../images/bookmarkInactive.svg");
+}
+
+.card__button-inactive:hover {
+  background-image: url("../../images/bookmarkBlack.svg");
+}
+
+.card__button-active {
+  background-image: url("../../images/bookmarkBlue.svg");
+}
+
+.card__signin-toSee {
+  position: absolute;
+  top: 10px;
+  right: 70px;
+  width: 182px;
+  height: 40px;
+  background-color: white;
+  color: black;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.card__signin-toSee-notShown {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 224px;
+    height: 420px;
+  }
+
+  .card__image {
+    width: 224px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .card__date {
+    font-size: 18px;
+  }
+
+  .card__title {
+    font-size: 22px;
+    width: 192px;
+    height: 65px;
+  }
+
+  .card__description {
+    font-size: 16px;
+    width: 192px;
+    height: 69px;
+  }
+
+  .card__signin-toSee {
+    width: 140px;
+    right: 55px;
+  }
+
+  .card__author {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .card {
+    width: 288px;
+    height: 440px;
+  }
+
+  .card__image {
+    width: 288px;
+  }
+
+  .card__title {
+    height: 87px;
+    width: 240px;
+  }
+
+  .card__description {
+    height: 70px;
+    width: 240px;
+  }
+
+  .card__author {
+  }
+}

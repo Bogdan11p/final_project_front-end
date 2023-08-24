@@ -58,6 +58,7 @@ const NewsCard = ({
           target="_blank"
         >
           <img className="card__image" src={card.image} alt={card.title} />
+
           <h3 className="card__date">
             {handleDateFormat(card.date.slice(0, 10))}
           </h3>

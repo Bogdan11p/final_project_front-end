@@ -25,20 +25,18 @@ const SearchArticlesProfile = ({
 
   return (
     <div className="search">
-      <div className="search__container">
-        <h2 className="search__title">Search results</h2>
-        <ul className={searchArticlesClassname}>
-          <NewsCardList
-            handleDeleteArticle={handleDeleteArticle}
-            handleSaveArticle={handleSaveArticle}
-            showsOnProfile={showsOnProfile}
-            keyword={keyword}
-            newsCards={savedNewsArticles}
-            savedNewsArticles={savedNewsArticles}
-            visible={visible}
-          />
-        </ul>
-      </div>
+      <h2 className="search__title">Search results</h2>
+      <ul className={searchArticlesClassname}>
+        <NewsCardList
+          handleDeleteArticle={handleDeleteArticle}
+          handleSaveArticle={handleSaveArticle}
+          showsOnProfile={showsOnProfile}
+          keyword={keyword}
+          newsCards={savedNewsArticles}
+          savedNewsArticles={savedNewsArticles}
+          visible={visible}
+        />
+      </ul>
     </div>
   );
 };

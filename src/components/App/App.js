@@ -20,7 +20,8 @@ function App() {
   const [activeModal, setActiveModal] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [showsOnProfile, setShowsOnProfile] = useState(false);
-  const [currentUser, setCurrentUser] = useState({});
+  const [currentUser, setCurrentUser] = useState(null);
+
   const [keyword, setKeyword] = useState(null);
   const [newsCards, setNewsCards] = useState({});
   const [visible, setVisible] = useState(3);

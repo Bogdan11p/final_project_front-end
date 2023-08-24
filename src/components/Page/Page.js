@@ -12,7 +12,7 @@ const Page = ({
   isLoading,
   newsCards,
   savedNewsArticles,
-  showMoreItems,
+  showMoreArticles,
   visible,
   keyword,
   handleOpenMobileMenuNotLoggedIn,
@@ -33,7 +33,7 @@ const Page = ({
         keyword={keyword}
         newsCards={newsCards}
         savedNewsArticles={savedNewsArticles}
-        showMoreItems={showMoreItems}
+        showMoreArticles={showMoreArticles}
         visible={visible}
       />
       {visible === 3 && <About />}

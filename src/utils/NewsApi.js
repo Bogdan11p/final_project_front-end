@@ -1,4 +1,5 @@
-import { APIkey, baseUrl } from "./Constants";
+import { APIkey } from "./Constants";
+const baseUrl = "https://nomoreparties.co/news/v2";
 
 const currentDate = new Date();
 const currentDateString = currentDate.toLocaleDateString("ro-RO");
