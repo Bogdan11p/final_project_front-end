@@ -12,7 +12,6 @@ const SearchArticlesProfile = ({
 
   keyword,
   savedNewsArticles,
-
   visible,
 }) => {
   const searchArticlesClassname =

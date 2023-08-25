@@ -3,6 +3,7 @@
   padding-top: 90px;
   width: 608px;
   height: 64px;
+  position: relative;
 }
 
 .search__form_button {
@@ -12,10 +13,8 @@
   color: white;
   border-radius: 60px;
   border: none;
-  position: relative;
-  top: -64px;
-  right: -440px;
-
+  position: absolute;
+  right: -10px;
   cursor: pointer;
   font-family: "Roboto";
   font-style: normal;
@@ -56,9 +55,8 @@
   }
 
   .search__form_button {
-    position: relative;
-    left: 320px;
-    top: -60px;
+    top: 36px;
+    right: -23px;
     width: 160px;
     height: 61px;
   }
@@ -68,7 +66,6 @@
   .search__form {
     width: 288px;
 
-    position: relative;
     padding-top: 100px;
   }
 
@@ -81,8 +78,8 @@
 
   .search__form_button {
     width: 288px;
-    position: relative;
-    top: 20px;
+
+    top: 170px;
     left: 0;
     height: 56px;
   }

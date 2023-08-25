@@ -123,10 +123,13 @@ function App() {
     });
   };
 
-  const handleSignIn = (inputValues) => {
-    setIsLoading(true);
+  const handleSignIn = () => {
+    setIsLoading(false);
     console.log("logging in now");
-    userApi
+    setCurrentUser({});
+    handleCloseModal();
+    history.push("/saved-news");
+    /* userApi
       .signin(inputValues)
       .then((data) => {
         console.log(data);
@@ -145,7 +148,7 @@ function App() {
       })
       .finally(() => {
         setIsLoading(false);
-      });
+      }); */
   };
 
   const handleRegister = ({ email, password, name }) => {

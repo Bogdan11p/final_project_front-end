@@ -8,6 +8,7 @@
   padding-right: 60px;
   border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
   height: 80px;
+  position: relative;
 }
 
 .navbar__notLoggedIn-mobileMenu {
@@ -150,20 +151,25 @@
   justify-content: space-between;
   width: 320px;
   height: 56px;
-  position: relative;
-  bottom: 30px;
+  position: absolute;
+  top: 5px;
   border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
   margin: 0 20px 0 20px;
 }
 
 .mobileMenu__notLoggedIn-title {
   margin-left: 15px;
+  position: absolute;
+  bottom: 17px;
+  width: 117px;
+  height: 24px;
 }
 
 .mobileMenu__notLoggedIn-close {
   margin-right: 15px;
-  position: relative;
+  position: absolute;
   right: 5px;
+  top: 15px;
 }
 
 .mobileMenu__notLoggedIn-page {
@@ -196,8 +202,8 @@
   justify-content: space-between;
   width: 320px;
   height: 56px;
-  position: relative;
-  bottom: -5px;
+  position: absolute;
+  top: 10px;
   border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
   margin: 0 20px 0 20px;
 }
@@ -207,15 +213,22 @@
   flex-direction: column;
   gap: 10px;
   height: 155px;
+  position: absolute;
+  bottom: 10px;
 }
 
 .mobileMenu__loggedIn-title {
   margin-left: 15px;
+  width: 117px;
+  height: 24px;
+  position: absolute;
+  top: 10px;
 }
 
 .mobileMenu__loggedIn-close {
   margin-right: 15px;
-  position: relative;
+  position: absolute;
+  top: 10px;
   right: 10px;
   cursor: pointer;
 }
@@ -286,14 +299,14 @@
 
   .navbar__notLoggedIn-buttons {
     visibility: hidden;
-    position: relative;
-    right: 150px;
+    position: absolute;
+    right: 40px;
   }
 
   .navbar__notLoggedIn-mobileMenu {
     visibility: visible;
-    position: relative;
-    left: 120px;
+    position: absolute;
+    right: 20px;
   }
 
   /* loggedIn */

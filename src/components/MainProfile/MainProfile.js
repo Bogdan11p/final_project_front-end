@@ -10,6 +10,7 @@ const MainProfile = ({
   savedNewsArticles,
   visible,
   isLoading,
+  
 }) => {
   return (
     <>
@@ -22,6 +23,7 @@ const MainProfile = ({
         keyword={keyword}
         savedNewsArticles={savedNewsArticles}
         visible={visible}
+
       />
     </>
   );

@@ -12,6 +12,7 @@ const SearchArticlesPage = ({
   savedNewsArticles,
   showMoreArticles,
   visible,
+  handleSaveButtonClick,
 }) => {
   const searchArticlesClassname =
     visible === 3 ? "search__cards" : "search__cards__active";
@@ -34,6 +35,7 @@ const SearchArticlesPage = ({
                 newsCards={newsCards}
                 savedNewsArticles={savedNewsArticles}
                 visible={visible}
+                handleSaveButtonClick={handleSaveButtonClick}
               />
             </div>
             {visible === 3 && newsCards.length > 3 && (
