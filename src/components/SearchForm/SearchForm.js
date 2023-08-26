@@ -9,8 +9,8 @@ const SearchForm = ({ handleGetArticles }) => {
     ? "search__form_button-clicked"
     : "search__form_button";
 
-  const handleSearchClick = (evt) => {
-    evt.preventDefault();
+  const handleSearchClick = (e) => {
+    e.preventDefault();
     setIsSearchClicked(true);
     setTimeout(function () {
       setIsSearchClicked(false);

@@ -23,6 +23,23 @@
   line-height: 24px;
 }
 
+.search__form_button-clicked {
+  width: 168px;
+  height: 64px;
+  background-color: rgb(62, 62, 244);
+  color: white;
+  border-radius: 60px;
+  border: none;
+  position: absolute;
+  right: -10px;
+  cursor: pointer;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .search__form-input {
   width: 560px;
   height: 61px;
@@ -60,6 +77,13 @@
     width: 160px;
     height: 61px;
   }
+
+  .search__form_button-clicked {
+    top: 36px;
+    right: -23px;
+    width: 160px;
+    height: 61px;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -77,6 +101,13 @@
   }
 
   .search__form_button {
+    width: 288px;
+
+    top: 170px;
+    left: 0;
+    height: 56px;
+  }
+  .search__form_button-clicked {
     width: 288px;
 
     top: 170px;

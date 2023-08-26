@@ -58,6 +58,10 @@
     padding-right: 40px;
   }
 
+  .search__title {
+    font-size: 25px;
+  }
+
   .search__cards {
     gap: 8px 8px;
   }
@@ -86,6 +90,6 @@
   }
 
   .search__title {
-    font-size: 30px;
+    font-size: 25px;
   }
 }

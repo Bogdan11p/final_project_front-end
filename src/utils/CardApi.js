@@ -59,12 +59,16 @@ const cardApi = {
     return await newsApi.request(url, type);
   },
 
-  saveArticle: async ({ keyword, title, text, date, source, link, image }) => {
-    const url = `${baseUrl}/saved-news`;
+  saveArticle: async (
+    { keyword, title, text, date, source, link, image },
+    token
+  ) => {
+    const url = `${baseUrl}/articles`;
     const type = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({ keyword, title, text, date, source, link, image }),
     };

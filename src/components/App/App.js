@@ -124,11 +124,10 @@ function App() {
   };
 
   const handleSignIn = () => {
-    setIsLoading(false);
     console.log("logging in now");
     setCurrentUser({});
     handleCloseModal();
-    history.push("/saved-news");
+
     /* userApi
       .signin(inputValues)
       .then((data) => {
@@ -152,7 +151,6 @@ function App() {
   };
 
   const handleRegister = ({ email, password, name }) => {
-    setIsLoading(true);
     userApi
       .signUp({ email, password, name })
       .then((res) => {
