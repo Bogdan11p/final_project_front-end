@@ -2,7 +2,7 @@ const APIkey = "a8fbc0dae43847ec9a04be211ad251df";
 const baseUrl =
   process.env.NODE_ENV === "production"
     ? "https://api.news-explorer.fcsb.com/"
-    : "http://localhost:3001";
+    : "http://localhost:3000";
 
 const articleItems = {
   status: "ok",

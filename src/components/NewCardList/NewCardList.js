@@ -8,6 +8,7 @@ const NewsCardList = ({
   newsCards,
   savedNewsArticles,
   visible,
+  handleSaveButtonClick,
 }) => {
   const cardsShown = showsOnProfile ? savedNewsArticles.length : visible;
 
@@ -23,6 +24,7 @@ const NewsCardList = ({
           key={article._id}
           keyword={keyword}
           savedNewsArticles={savedNewsArticles}
+          handleSaveButtonClick={handleSaveButtonClick}
         />
       ))}
     </>

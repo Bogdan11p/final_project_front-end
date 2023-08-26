@@ -123,10 +123,12 @@ function App() {
     });
   };
 
-  const handleSignIn = (inputValues) => {
-    setIsLoading(true);
+  const handleSignIn = () => {
     console.log("logging in now");
-    userApi
+    setCurrentUser({});
+    handleCloseModal();
+
+    /* userApi
       .signin(inputValues)
       .then((data) => {
         console.log(data);
@@ -145,11 +147,10 @@ function App() {
       })
       .finally(() => {
         setIsLoading(false);
-      });
+      }); */
   };
 
   const handleRegister = ({ email, password, name }) => {
-    setIsLoading(true);
     userApi
       .signUp({ email, password, name })
       .then((res) => {

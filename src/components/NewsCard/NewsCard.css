@@ -145,6 +145,7 @@
 
   .card__author {
     font-size: 16px;
+    width: 200px;
   }
 }
 
@@ -169,5 +170,6 @@
   }
 
   .card__author {
+    width: 250px;
   }
 }
