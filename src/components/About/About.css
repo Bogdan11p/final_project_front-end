@@ -4,6 +4,7 @@
   gap: 25px;
   height: 624px;
   width: 100%;
+  position: relative;
 }
 
 .about__left {
@@ -22,14 +23,14 @@
 }
 
 .about__right-title {
-  font-family: "Roboto Slab", Arial, sans-serif;
+  font-family: "Roboto Slab";
   font-size: 30px;
   font-weight: 400;
   line-height: 40px;
 }
 
 .about__right-subtitle {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto";
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
@@ -71,13 +72,14 @@
     gap: 0;
     height: 752px;
     align-items: center;
-    padding-top: 30px;
   }
   .about__left {
     margin: 0;
     height: 35%;
     width: 272px;
     height: 272px;
+    position: absolute;
+    top: 20px;
   }
 
   .about__left-picture {
@@ -93,9 +95,13 @@
 
   .about__right-title {
     width: 288px;
+    position: absolute;
+    bottom: 350px;
   }
 
   .about__right-subtitle {
     width: 288px;
+    position: absolute;
+    bottom: 160px;
   }
 }

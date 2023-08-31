@@ -8,13 +8,13 @@
 }
 
 .navbar__profile-title {
-  padding-left: 60px;
+  padding-left: 100px;
   width: 137px;
   height: 79px;
 }
 
 .navbar__profile-buttons {
-  padding-right: 60px;
+  padding-right: 100px;
 }
 
 .navbar__profile-container {
@@ -29,7 +29,7 @@
   background: transparent;
   color: gray;
   height: 79px;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto";
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
@@ -40,7 +40,7 @@
   border: none;
   background: transparent;
   color: black;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto";
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -59,7 +59,7 @@
   align-items: center;
   border: 1px black solid;
   border-radius: 20px;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto";
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
@@ -67,43 +67,46 @@
   cursor: pointer;
 }
 
-.navbar__profile-mobileMenu {
+.navbar__profile-mobilemenu {
   visibility: hidden;
+  background-image: url("../../images/mobile-menu-profile.svg");
+  background-color: transparent;
+  border: none;
 }
 
-.mobileMenu__profile-lower {
+.mobilemenu__profile-lower {
   display: flex;
   flex-direction: column;
   gap: 10px;
   height: 155px;
 }
 
-.mobileMenu__profile-upper {
+.mobilemenu__profile-upper {
   display: flex;
   justify-content: space-between;
   width: 320px;
   height: 56px;
   position: relative;
-  bottom: -5px;
+  bottom: 10px;
   border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
   margin: 0 20px 0 20px;
 }
 
-.mobileMenu__profile-title {
+.mobilemenu__profile-title {
   margin-left: 15px;
   text-decoration: none;
   position: relative;
-  top: 17px;
+  top: 18px;
 }
 
-.mobileMenu__profile-close {
+.mobilemenu__profile-close {
   margin-right: 15px;
   cursor: pointer;
 }
 
-.mobileMenu__profile-page {
+.mobilemenu__profile-page {
   color: white;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto";
   font-size: 18px;
   font-weight: 500;
   line-height: 56px;
@@ -112,9 +115,9 @@
   cursor: pointer;
 }
 
-.mobileMenu__profile-savedArticles {
+.mobilemenu__profile-savedArticles {
   color: white;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto";
   font-size: 18px;
   font-weight: 500;
   line-height: 56px;
@@ -128,7 +131,7 @@
   cursor: pointer;
 }
 
-.mobileMenu__profile-logout-button {
+.mobilemenu__profile-logout-button {
   background: transparent;
   color: white;
   display: flex;
@@ -138,15 +141,29 @@
   border-radius: 20px;
   width: 288px;
   height: 40px;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto";
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
   padding: 0;
   cursor: pointer;
+  position: relative;
+  top: 15px;
 }
 
 @media screen and (max-width: 768px) {
+  .navbar__profile {
+    height: 66px;
+  }
+  .navbar__profile-saved-articles {
+    height: 66px;
+    font-size: 16px;
+  }
+
+  .navbar__profile-page {
+    font-size: 16px;
+  }
+
   .navbar__profile-title {
     padding-left: 40px;
   }
@@ -154,17 +171,27 @@
   .navbar__profile-buttons {
     padding-right: 40px;
   }
+
+  .navbar__profile-logout-button {
+    height: 40px;
+  }
 }
 
 @media screen and (max-width: 320px) {
-  .navbar__profile-mobileMenu {
+  .navbar__profile {
+    height: 56px;
+  }
+
+  .navbar__profile-mobilemenu {
     visibility: visible;
-    position: relative;
-    left: 144px;
+    position: absolute;
+    right: 16px;
+    width: 24px;
+    height: 24px;
   }
 
   .navbar__profile-title {
-    padding-left: 10px;
+    padding-left: 16px;
   }
 
   .navbar__profile-buttons {

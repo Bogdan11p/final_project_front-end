@@ -16,7 +16,7 @@
 
 .nothing__found-title {
   margin: 0;
-  font-family: "Roboto Slab", Arial, sans-serif;
+  font-family: "Roboto Slab";
 
   font-weight: 400;
   font-size: 26px;
@@ -25,7 +25,7 @@
 
 .nothing__found-subtitle {
   margin: 0;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto";
 
   font-weight: 400;
   font-size: 18px;

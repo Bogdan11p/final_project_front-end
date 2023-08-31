@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <section className="footer">
+    <footer className="footer">
       <div className="footer__left">
         <p className="footer__left-description">
           © 2023 Supersite, Powered by News API
@@ -16,20 +16,30 @@ const Footer = () => {
         <NavLink to="/" className="footer__link">
           Home
         </NavLink>
-        <NavLink to="https://tripleten.com/" className="footer__link">
-          TripleTen
-        </NavLink>
-        <NavLink to="https://github.com/Bogdan11p" className="footer__link">
-          <img className="footer__link-git" src={gitHubPic} alt="gitHub logo" />
-        </NavLink>
-        <NavLink
-          to="https://www.facebook.com/bogdan.pintilie.3/"
-          className="footer__link"
+        <a
+          className="footer__right-tripleTen"
+          href="https://tripleten.com/"
+          target="_blank"
+          rel="noreferrer"
         >
-          <img className="footer__link-fb" src={fbPic} alt="fb logo" />
-        </NavLink>
+          TripleTen
+        </a>
+        <a href="https://github.com/Bogdan11p" target="_blank" rel="noreferrer">
+          <img
+            className="footer__right-git"
+            src={gitHubPic}
+            alt="gitHub logo"
+          ></img>
+        </a>
+        <a
+          href="https://www.facebook.com/bogdan.pintilie.3/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img className="footer__right-fb" src={fbPic} alt="fb logo"></img>
+        </a>
       </div>
-    </section>
+    </footer>
   );
 };
 export default Footer;

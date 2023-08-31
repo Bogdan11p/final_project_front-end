@@ -127,6 +127,7 @@ function App() {
     console.log("logging in now");
     setCurrentUser({});
     handleCloseModal();
+    history.push("/saved-news");
 
     /* userApi
       .signin(inputValues)
@@ -231,7 +232,7 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <div>
+      <div className="interface">
         <Switch>
           <ProtectedRoute currentUser={currentUser} path="/saved-news">
             <Profile

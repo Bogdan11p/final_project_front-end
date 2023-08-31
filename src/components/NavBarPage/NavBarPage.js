@@ -39,54 +39,47 @@ const NavBarPage = ({ handleSignIn, handleSignOut, handleProfileIn }) => {
   return (
     <>
       {currentUser === null ? (
-        <section className="navbar__notLoggedIn">
+        <section className="navbar__nli">
           <img
-            className="navbar__notLoggedIn-title"
+            className="navbar__nli-title"
             src={pageLogo}
             id="home"
             alt="page logo"
           ></img>
-          <img
-            className="navbar__notLoggedIn-mobileMenu"
+          <button
+            className="navbar__nli-mobilemenu"
             src={mobileMenuPage}
             onClick={handleMobileMenuNotLoggedInOn}
             alt="mobile menu not logged in"
-          />
-          <div className="navbar__notLoggedIn-buttons">
-            <div className="navbar__notLoggedIn-page-container">
+          ></button>
+          <div className="navbar__nli-buttons">
+            <div className="navbar__nli-page-container">
               <NavLink to="/">
-                <button className="navbar__notLoggedIn-page">Home</button>
+                <button className="navbar__nli-page">Home</button>
               </NavLink>
-              <button
-                className="navbar__notLoggedIn-signin"
-                onClick={handleSignIn}
-              >
+              <button className="navbar__nli-signin" onClick={handleSignIn}>
                 Sign in
               </button>
             </div>
           </div>
         </section>
       ) : (
-        <section className="navbar__loggedIn">
-          <img
-            className="navbar__loggedIn-title"
-            src={pageLogo}
-            alt="page logo"
-          />
-          <img
-            className="navbar__loggedIn-mobileMenu"
+        <section className="navbar__li">
+          <img className="navbar__li-title" src={pageLogo} alt="page logo" />
+          <button
+            className="navbar__li-mobilemenu"
             src={mobileMenuPage}
             onClick={handleMobileMenuLoggedInOn}
             alt="mobile menu logged in"
-          />
-          <div className="navbar__loggedIn-buttons">
-            <div className="navbar__loggedIn-page-container">
+          ></button>
+          <div className="navbar__li-buttons">
+            <div className="navbar__li-page-container">
               <NavLink to="/">
-                <button className="navbar__loggedIn-page">Home</button>
+                <button className="navbar__li-page">Home</button>
               </NavLink>
               <NavLink to="/saved-news">
                 <button
-                  className="navbar__loggedIn-saved-articles"
+                  className="navbar__li-saved-articles"
                   onClick={handleProfileIn}
                 >
                   Saved Articles
@@ -94,14 +87,14 @@ const NavBarPage = ({ handleSignIn, handleSignOut, handleProfileIn }) => {
               </NavLink>
 
               <button
-                className="navbar__loggedIn-logout-button"
+                className="navbar__li-logout-button"
                 type="button"
                 aria-label="logout"
                 onClick={handleSignOut}
               >
                 {`${currentUser}`}{" "}
                 <img
-                  className=" mobileMenu__loggedIn-logout-image"
+                  className=" mobileMenu__li-logout-image"
                   src={logoOutLogoPage}
                   alt="logo out logo page"
                 />
@@ -111,74 +104,75 @@ const NavBarPage = ({ handleSignIn, handleSignOut, handleProfileIn }) => {
         </section>
       )}
       {isMobileMenuNotLoggedIn && (
-        <section className="mobileMenu" onClick={handleCloseOnOverlay}>
-          <div className="mobileMenu__notLoggedIn-upper">
-            <img
-              className="mobileMenu__notLoggedIn-title"
-              src={pageLogo}
-              id="home"
-              alt="page logo"
-            />
+        <div className="mobilemenu__page">
+          <section className="mobilemenu" onClick={handleCloseOnOverlay}>
+            <div className="mobilemenu__nli-upper">
+              <img
+                className="mobilemenu__nli-title"
+                src={pageLogo}
+                id="home"
+                alt="page logo"
+              />
 
-            <img
-              className="mobileMenu__notLoggedIn-close"
-              src={closeButton}
-              onClick={handleMobileMenuNotLoggedInOff}
-              alt="close button"
-            />
-          </div>
-          <div className="mobileMenu__notLoggedIn-lower">
-            <h2 className="mobileMenu__notLoggedIn-page">Home</h2>
-            <button
-              className="mobileMenu__notLoggedIn-signin"
-              onClick={handleSignIn}
-            >
-              Sign in
-            </button>
-          </div>
-        </section>
+              <img
+                className="mobilemenu__nli-close"
+                src={closeButton}
+                onClick={handleMobileMenuNotLoggedInOff}
+                alt="close button"
+              />
+            </div>
+            <div className="mobilemenu__nli-lower">
+              <h2 className="mobilemenu__nli-page">Home</h2>
+              <button className="mobilemenu__nli-signin" onClick={handleSignIn}>
+                Sign in
+              </button>
+            </div>
+          </section>
+        </div>
       )}
       {isMobileMenuLoggedIn && (
-        <section className="mobileMenu" onClick={handleCloseOnOverlay}>
-          <div className="mobileMenu__loggedIn-upper">
-            <img
-              className="mobileMenu__loggedIn-title"
-              src={pageLogo}
-              id="home"
-              alt="page logo"
-            />
-
-            <img
-              className="mobileMenu__loggedIn-close"
-              src={closeButton}
-              onClick={handleMobileMenuLoggedInOff}
-              alt="close button"
-            />
-          </div>
-          <div className="mobileMenu__loggedIn-lower">
-            <h2 className="mobileMenu__loggedIn-page">Home</h2>
-
-            <NavLink to="/saved-news" style={{ textDecoration: "none" }}>
-              <button className="mobileMenu__loggedIn-savedArticles">
-                Saved Articles
-              </button>
-            </NavLink>
-
-            <button
-              className="mobileMenu__loggedIn-logout-button"
-              type="button"
-              aria-label="logout"
-              onClick={handleSignOut}
-            >
-              {`${currentUser}`}{" "}
+        <div className="mobilemenu__page">
+          <section className="mobilemenu" onClick={handleCloseOnOverlay}>
+            <div className="mobilemenu__li-upper">
               <img
-                className="mobileMenu__loggedIn-logout-image"
-                src={logoOutLogoPage}
-                alt="logo out logo page"
+                className="mobilemenu__li-title"
+                src={pageLogo}
+                id="home"
+                alt="page logo"
               />
-            </button>
-          </div>
-        </section>
+
+              <img
+                className="mobilemenu__li-close"
+                src={closeButton}
+                onClick={handleMobileMenuLoggedInOff}
+                alt="close button"
+              />
+            </div>
+            <div className="mobilemenu__li-lower">
+              <h2 className="mobilemenu__li-page">Home</h2>
+
+              <NavLink to="/saved-news" style={{ textDecoration: "none" }}>
+                <button className="mobilemenu__li-savedArticles">
+                  Saved Articles
+                </button>
+              </NavLink>
+
+              <button
+                className="mobilemenu__li-logout-button"
+                type="button"
+                aria-label="logout"
+                onClick={handleSignOut}
+              >
+                {`${currentUser}`}{" "}
+                <img
+                  className="mobilemenu__li-logout-image"
+                  src={logoOutLogoPage}
+                  alt="logo out logo page"
+                />
+              </button>
+            </div>
+          </section>
+        </div>
       )}
     </>
   );

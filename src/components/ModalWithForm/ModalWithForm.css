@@ -12,7 +12,7 @@
 }
 
 .modal__header {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
@@ -67,7 +67,7 @@
   color: #2f71e5;
   padding-top: 24px;
   width: 358px;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -105,7 +105,7 @@
   height: 64px;
   border-radius: 30px;
   cursor: pointer;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -139,22 +139,25 @@
   .modal {
     position: fixed;
     top: 0;
-    right: 3px;
+    right: 0px;
     left: 0;
     bottom: 0;
   }
 
   .modal__fieldset {
-    padding: 0;
+    padding: 16px;
     margin: 0;
   }
 
   .modal__label-container {
     width: 288px;
+    margin: 0;
+    margin-top: 18px;
   }
 
   .modal__input {
     width: 275px;
+    margin-bottom: 30px;
   }
 
   .modal__submit {
@@ -162,18 +165,38 @@
   }
 
   .modal__close {
-    position: relative;
-    left: 240px;
-    top: -80px;
+    position: absolute;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    background-position: center;
   }
 
   .modal__header {
     margin: 0;
   }
 
-  .modal__content {
-    width: 280px;
+  .modal__form {
+  }
 
-    padding: 15px 15px;
+  .modal__content {
+    width: 320px;
+    height: 560px;
+    position: absolute;
+    top: 63px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .modal__label {
+    padding: 0;
+  }
+
+  .modal__buttons-down {
+    padding: 0;
   }
 }

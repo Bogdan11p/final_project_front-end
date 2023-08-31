@@ -49,12 +49,12 @@ const NavBarProfile = ({
             alt="profile logo"
           ></img>
         </NavLink>
-        <img
-          className="navbar__profile-mobileMenu"
+        <button
+          className="navbar__profile-mobilemenu"
           src={mobileMenuProfile}
           onClick={handleMobileMenuProfileOn}
           alt="mobile menu "
-        />
+        ></button>
         <div className="navbar__profile-buttons">
           <div className="navbar__profile-container">
             <NavLink to="/">
@@ -82,50 +82,55 @@ const NavBarProfile = ({
       </section>
 
       {isMobileMenuProfile && (
-        <section className="mobileMenu" onClick={handleCloseOnOverlay}>
-          <div className="mobileMenu__profile-upper">
-            <NavLink to="/">
+        <div className="mobilemenu__page">
+          <section className="mobilemenu" onClick={handleCloseOnOverlay}>
+            <div className="mobilemenu__profile-upper">
+              <NavLink to="/">
+                <img
+                  className="mobilemenu__profile-title"
+                  src={pageLogo}
+                  id="home"
+                  alt="page logo"
+                />
+              </NavLink>
               <img
-                className="mobileMenu__profile-title"
-                src={pageLogo}
-                id="home"
-                alt="page logo"
+                className="mobilemenu__profile-close"
+                src={closeButton}
+                onClick={handleMobileMenuProfileOff}
+                alt="close button"
               />
-            </NavLink>
-            <img
-              className="mobileMenu__profile-close"
-              src={closeButton}
-              onClick={handleMobileMenuProfileOff}
-              alt="close button"
-            />
-          </div>
-          <div className="mobileMenu__profile-lower">
-            <NavLink to="/" style={{ textDecoration: "none" }}>
-              <h2 className="mobileMenu__profile-page" onClick={handleGoToPage}>
-                Home
-              </h2>
-            </NavLink>
-            <NavLink to="/saved-news" style={{ textDecoration: "none" }}>
-              <button className="mobileMenu__loggedIn-savedArticles">
-                Saved Articles
-              </button>
-            </NavLink>
+            </div>
+            <div className="mobilemenu__profile-lower">
+              <NavLink to="/" style={{ textDecoration: "none" }}>
+                <h2
+                  className="mobilemenu__profile-page"
+                  onClick={handleGoToPage}
+                >
+                  Home
+                </h2>
+              </NavLink>
+              <NavLink to="/saved-news" style={{ textDecoration: "none" }}>
+                <button className="mobilemenu__li-savedArticles">
+                  Saved Articles
+                </button>
+              </NavLink>
 
-            <button
-              className="mobileMenu__profile-logout-button"
-              type="button"
-              aria-label="logout"
-              onClick={handleSignOut}
-            >
-              {`${currentUser}`}{" "}
-              <img
-                className="mobileMenu__profile-logout-image"
-                src={logOutLogoPage}
-                alt="logo out logo page"
-              />
-            </button>
-          </div>
-        </section>
+              <button
+                className="mobilemenu__profile-logout-button"
+                type="button"
+                aria-label="logout"
+                onClick={handleSignOut}
+              >
+                {`${currentUser}`}{" "}
+                <img
+                  className="mobilemenu__profile-logout-image"
+                  src={logOutLogoPage}
+                  alt="logo out logo page"
+                />
+              </button>
+            </div>
+          </section>
+        </div>
       )}
     </>
   );

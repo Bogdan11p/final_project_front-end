@@ -1,28 +1,26 @@
 .search {
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 100px;
+  padding-right: 100px;
   background-color: rgb(220, 220, 220, 0.5);
   position: relative;
 }
 
 .search__title {
-  font-family: "Roboto slab", Arial, sans-serif;
+  font-family: "Roboto slab";
   font-size: 40px;
   font-weight: 400;
   line-height: 46px;
   margin: 0;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  padding-top: 80px;
+  padding-bottom: 60px;
 }
 
 .search__cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px 16px;
+  justify-content: start;
+  gap: 20px;
   padding: 0;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .search__cards__active {
@@ -37,14 +35,14 @@
 .search__button {
   width: 288px;
   height: 64px;
-  margin: 64px auto 80px;
+  margin: 66px auto 82px;
   padding: 0;
   border: none;
   border-radius: 35px;
   background: #ffffff;
   cursor: pointer;
   z-index: 2;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto";
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
@@ -59,7 +57,10 @@
   }
 
   .search__title {
-    font-size: 25px;
+    font-size: 30px;
+    line-height: 34px;
+    padding-top: 45px;
+    padding-bottom: 30px;
   }
 
   .search__cards {
@@ -74,22 +75,35 @@
     left: 225px;
     width: 240px;
     height: 56px;
+    margin: 27px auto 42px;
   }
 }
 
 @media screen and (max-width: 320px) {
   .search {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .search__cards {
+    gap: 16px 16px;
+  }
+
+  .search__cards__active {
+    gap: 16px 16px;
   }
 
   .search__button {
-    left: 25px;
+    left: 22px;
     width: 240px;
     height: 56px;
+    margin: 28px auto 28px;
   }
 
   .search__title {
-    font-size: 25px;
+    font-size: 24px;
+    line-height: 34px;
+    padding-top: 30px;
+    padding-bottom: 40px;
   }
 }

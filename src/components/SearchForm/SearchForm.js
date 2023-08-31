@@ -6,8 +6,8 @@ const SearchForm = ({ handleGetArticles }) => {
   const [isQuery, setIsQuery] = useState("");
 
   const buttonClassName = isSearchClicked
-    ? "search__form_button-clicked"
-    : "search__form_button";
+    ? "search__form-button-clicked"
+    : "search__form-button";
 
   const handleSearchClick = (e) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ const SearchForm = ({ handleGetArticles }) => {
   };
 
   return (
-    <form className="search__form">
+    <section className="search__form">
       <input
         className="search__form-input"
         type="text"
@@ -35,7 +35,7 @@ const SearchForm = ({ handleGetArticles }) => {
       >
         Search
       </button>
-    </form>
+    </section>
   );
 };
 
