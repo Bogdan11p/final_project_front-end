@@ -23,7 +23,7 @@ const SearchArticlesPage = ({
   return (
     <>
       {newsCards.length > 0 && (
-        <div className="search">
+        <section className="search">
           <div className={searchContainerClassname}>
             <h2 className="search__title">Search results</h2>
             <div className={searchArticlesClassname}>
@@ -44,7 +44,7 @@ const SearchArticlesPage = ({
               </button>
             )}
           </div>
-        </div>
+        </section>
       )}
       {newsCards.length <= 0 && <NothingFound />}
     </>

@@ -21,13 +21,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 15px;
+  gap: 32px;
 }
 
 .navbar__profile-page {
   border: none;
   background: transparent;
-  color: gray;
+  color: #1a1b22;
   height: 79px;
   font-family: "Roboto";
   font-size: 18px;
@@ -47,7 +47,7 @@
   line-height: 24px;
 
   border-bottom: 3px black solid;
-
+  width: 178px;
   cursor: pointer;
   height: 79px;
 }
@@ -57,7 +57,7 @@
   color: black;
   display: flex;
   align-items: center;
-  border: 1px black solid;
+  border: 1px #d1d2d6 solid;
   border-radius: 20px;
   font-family: "Roboto";
   font-size: 18px;
@@ -84,7 +84,7 @@
 .mobilemenu__profile-upper {
   display: flex;
   justify-content: space-between;
-  width: 320px;
+  width: 100%;
   height: 56px;
   position: relative;
   bottom: 10px;
@@ -104,6 +104,11 @@
   cursor: pointer;
 }
 
+.mobilemenu__profile-lower {
+  width: 100%;
+  margin-left: 30px;
+}
+
 .mobilemenu__profile-page {
   color: white;
   font-family: "Roboto";
@@ -113,6 +118,7 @@
   margin: 0;
   height: 40px;
   cursor: pointer;
+  width: 100%;
 }
 
 .mobilemenu__profile-savedArticles {
@@ -149,19 +155,26 @@
   cursor: pointer;
   position: relative;
   top: 15px;
+  width: 91.5%;
 }
 
 @media screen and (max-width: 768px) {
   .navbar__profile {
     height: 66px;
+    width: 100%;
   }
   .navbar__profile-saved-articles {
     height: 66px;
+    width: 160px;
     font-size: 16px;
   }
 
   .navbar__profile-page {
     font-size: 16px;
+  }
+
+  .navbar__profile-container {
+    gap: 16px;
   }
 
   .navbar__profile-title {
@@ -174,10 +187,20 @@
 
   .navbar__profile-logout-button {
     height: 40px;
+    font-size: 16px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 555px) {
+  .navbar__profile-container {
+    gap: 0;
+  }
+  .navbar__profile-saved-articles {
+    width: 130px;
+  }
+}
+
+@media screen and (max-width: 450px) {
   .navbar__profile {
     height: 56px;
   }
@@ -198,6 +221,14 @@
     visibility: hidden;
     padding: 0;
     position: relative;
-    right: 120px;
+    right: 180px;
+  }
+
+  .navbar__profile-logout-button {
+    position: relative;
+    right: 100px;
+  }
+  .navbar__profile-container {
+    width: 250px;
   }
 }

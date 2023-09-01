@@ -10,7 +10,6 @@
 
 .footer__right {
   display: flex;
-  gap: 20px;
 }
 
 .footer__link {
@@ -22,13 +21,19 @@
   line-height: 24px;
 }
 
-.footer__right-tripleTen {
+.footer__right-tripleten {
   text-decoration: none;
   color: #1a1b22;
   font-family: "Roboto";
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.footer__right-git {
+  margin-right: 24px;
 }
 
 .footer__left-description {
@@ -44,20 +49,21 @@
 @media screen and (max-width: 768px) {
   .footer {
     padding-left: 40px;
-    padding-right: 40px;
+    padding-right: 35px;
     height: 64px;
     margin: 0;
+    width: 84.25%;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 450px) {
   .footer {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 0;
+    padding-right: 0;
     display: flex;
     flex-direction: column;
     position: relative;
-
+    width: 100%;
     height: 176px;
   }
 
@@ -66,22 +72,25 @@
     justify-content: space-between;
     position: relative;
     bottom: 120px;
-    width: 288px;
+    width: 92%;
   }
 
   .footer__left-description {
-    width: 288px;
     position: relative;
     top: 140px;
+    width: 94%;
+    margin-left: 16px;
+    margin-right: 16px;
   }
 
-  .footer__right-tripleTen {
+  .footer__right-tripleten {
     position: absolute;
     top: 40px;
+    margin: 0;
   }
 
   .footer__right-git {
     position: absolute;
-    right: 50px;
+    right: 30px;
   }
 }

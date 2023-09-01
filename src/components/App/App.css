@@ -1,5 +1,6 @@
 .interface {
-  width: 1440px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .App {
@@ -41,14 +42,14 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .interface {
     width: 768px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 450px) {
   .interface {
     width: 320px;
   }
-}
+} */

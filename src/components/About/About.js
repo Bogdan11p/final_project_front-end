@@ -9,7 +9,7 @@ const About = () => {
         <img className="about__left-picture" src={authorPic} alt="author pic" />
       </div>
       <div className="about__right">
-        <h1 className="about__right-title">About the author</h1>
+        <h3 className="about__right-title">About the author</h3>
         <p className="about__right-subtitle">
           This block describes the project author. Here you should indicate your
           name, what you do, and which development technologies you know. You

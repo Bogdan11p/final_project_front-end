@@ -17,7 +17,7 @@ const Footer = () => {
           Home
         </NavLink>
         <a
-          className="footer__right-tripleTen"
+          className="footer__right-tripleten"
           href="https://tripleten.com/"
           target="_blank"
           rel="noreferrer"

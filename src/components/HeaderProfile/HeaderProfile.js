@@ -63,8 +63,8 @@ const HeaderProfile = ({
         handleVisibleReset={handleVisibleReset}
       />
 
-      <h2 className="header__profile-title">Saved articles</h2>
-      <h3 className="header__profile-articles">{`${currentUser}, you have ${savedNewsArticles.length} saved articles`}</h3>
+      <h1 className="header__profile-title">Saved articles</h1>
+      <h2 className="header__profile-articles">{`${currentUser}, you have ${savedNewsArticles.length} saved articles`}</h2>
       <div className="header__profile-container">
         <p className="header__profile-keywords">
           By keywords:{""}

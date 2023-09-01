@@ -23,6 +23,7 @@
   background: transparent;
   color: white;
   height: 79px;
+  width: 68px;
   font-family: "Roboto";
   font-size: 18px;
   font-weight: 500;
@@ -35,7 +36,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 34px;
   text-align: center;
 }
 
@@ -60,7 +61,7 @@
 .navbar__li {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   padding-left: 100px;
   padding-right: 100px;
   border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
@@ -83,7 +84,7 @@
 
 .navbar__li-page-container {
   display: flex;
-  gap: 10px;
+  gap: 32px;
   height: 79px;
   align-items: center;
 }
@@ -150,19 +151,24 @@
   align-items: center;
   background-color: #1a1b22;
   height: 230px;
-  width: 320px;
+  width: 100%;
   z-index: 1;
 }
 
 .mobilemenu__nli-upper {
   display: flex;
   justify-content: space-between;
-  width: 320px;
+  width: 100%;
   height: 56px;
   position: absolute;
   top: -1px;
   border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
   margin: 0 20px 0 20px;
+}
+
+.mobilemenu__nli-lower {
+  width: 100%;
+  margin-right: px;
 }
 .mobilemenu__li-lower {
   position: relative;
@@ -179,7 +185,7 @@
 .mobilemenu__nli-close {
   margin-right: 15px;
   position: absolute;
-  right: 5px;
+  right: 0px;
   top: 15px;
 }
 
@@ -192,6 +198,7 @@
   margin: 0;
   height: 56px;
   margin-top: 16px;
+  margin-left: 16px;
   position: absolute;
   top: 55px;
 }
@@ -203,7 +210,7 @@
   align-items: center;
   border: 1px white solid;
   border-radius: 20px;
-  width: 288px;
+  width: 90%;
   height: 56px;
   font-family: "Roboto";
   font-size: 18px;
@@ -211,6 +218,8 @@
   line-height: 24px;
   cursor: pointer;
   margin-top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
   position: relative;
   top: 55px;
 }
@@ -218,7 +227,7 @@
 .mobilemenu__li-upper {
   display: flex;
   justify-content: space-between;
-  width: 320px;
+  width: 100%;
   height: 56px;
   position: absolute;
   top: -1px;
@@ -233,6 +242,8 @@
   height: 155px;
   position: absolute;
   bottom: 10px;
+  width: 100%;
+  margin-left: 30px;
 }
 
 .mobilemenu__li-title {
@@ -244,10 +255,9 @@
 }
 
 .mobilemenu__li-close {
-  margin-right: 15px;
   position: absolute;
   top: 15px;
-  right: 10px;
+  right: 15px;
   cursor: pointer;
 }
 
@@ -297,6 +307,7 @@
   cursor: pointer;
   position: relative;
   top: 20px;
+  width: 91%;
 }
 
 .mobilemenu__page {
@@ -322,11 +333,22 @@
 
   .navbar__nli-page {
     height: 66px;
+    width: 60px;
     font-size: 16px;
+  }
+
+  .navbar__nli-page-container {
+    gap: 19px;
   }
 
   .navbar__nli-title {
     height: 24.8px;
+  }
+
+  .navbar__nli-signin {
+    width: 152px;
+    height: 40px;
+    font-size: 16px;
   }
 
   /* loggedIn */
@@ -340,10 +362,16 @@
   .navbar__li-page {
     height: 66px;
     font-size: 16px;
+    width: 60px;
+  }
+
+  .navbar__li-page-container {
+    gap: 0px;
   }
 
   .navbar__li-saved-articles {
     font-size: 16px;
+    width: 80px;
   }
 
   .navbar__li-logout-button {
@@ -351,7 +379,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 450px) {
   .navbar__nli {
     padding: 0 20px 0 20px;
     height: 66px;
@@ -376,7 +404,8 @@
   .navbar__li-buttons {
     visibility: hidden;
     position: relative;
-    right: 130px;
+    right: 220px;
+    width: 150px;
   }
 
   .navbar__li-mobilemenu {
@@ -394,6 +423,7 @@
     visibility: visible;
     position: absolute;
     right: 16px;
+    top: 18px;
     width: 24px;
     height: 24px;
   }

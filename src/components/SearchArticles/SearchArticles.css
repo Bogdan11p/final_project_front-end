@@ -3,16 +3,18 @@
   padding-right: 100px;
   background-color: rgb(220, 220, 220, 0.5);
   position: relative;
+  max-width: 100%;
 }
 
 .search__title {
-  font-family: "Roboto slab";
+  font-family: "Roboto Slab";
   font-size: 40px;
   font-weight: 400;
   line-height: 46px;
   margin: 0;
   padding-top: 80px;
   padding-bottom: 60px;
+  max-width: 768px;
 }
 
 .search__cards {
@@ -54,6 +56,7 @@
   .search {
     padding-left: 40px;
     padding-right: 40px;
+    width: 100%;
   }
 
   .search__title {
@@ -61,6 +64,7 @@
     line-height: 34px;
     padding-top: 45px;
     padding-bottom: 30px;
+    width: 100%;
   }
 
   .search__cards {
@@ -79,7 +83,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 450px) {
   .search {
     padding-left: 16px;
     padding-right: 16px;
@@ -94,10 +98,12 @@
   }
 
   .search__button {
-    left: 22px;
-    width: 240px;
+    left: 0px;
+    width: 288px;
     height: 56px;
-    margin: 28px auto 28px;
+    margin-bottom: 24px;
+    margin-top: 16px;
+    z-index: 1;
   }
 
   .search__title {
