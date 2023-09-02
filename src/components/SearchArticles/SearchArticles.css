@@ -1,9 +1,10 @@
 .search {
-  padding-left: 100px;
-  padding-right: 100px;
+  width: 100%;
   background-color: rgb(220, 220, 220, 0.5);
   position: relative;
-  max-width: 100%;
+}
+
+.search__container {
 }
 
 .search__title {
@@ -14,15 +15,17 @@
   margin: 0;
   padding-top: 80px;
   padding-bottom: 60px;
-  max-width: 768px;
+  max-width: 712px;
+  padding-left: 100px;
 }
 
 .search__cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: center;
   gap: 20px;
-  padding: 0;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .search__cards__active {
@@ -34,7 +37,12 @@
   padding-bottom: 55px;
 }
 
-.search__button {
+.search__container-lower {
+  display: flex;
+  align-items: center;
+}
+
+.search__container-lower-btn {
   width: 288px;
   height: 64px;
   margin: 66px auto 82px;
@@ -49,34 +57,30 @@
   font-weight: 500;
   line-height: 24px;
   position: relative;
-  left: 500px;
+  align-self: center;
 }
 
 @media screen and (max-width: 768px) {
-  .search {
-    padding-left: 40px;
-    padding-right: 40px;
-    width: 100%;
-  }
-
   .search__title {
     font-size: 30px;
     line-height: 34px;
     padding-top: 45px;
     padding-bottom: 30px;
-    width: 100%;
+    width: 250px;
+    padding-left: 40px;
   }
 
   .search__cards {
     gap: 8px 8px;
+    justify-content: center;
   }
 
   .search__cards__active {
     gap: 8px 8px;
+    justify-content: center;
   }
 
-  .search__button {
-    left: 225px;
+  .search__container-lower-btn {
     width: 240px;
     height: 56px;
     margin: 27px auto 42px;
@@ -84,22 +88,17 @@
 }
 
 @media screen and (max-width: 450px) {
-  .search {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
   .search__cards {
     gap: 16px 16px;
+    justify-content: center;
   }
 
   .search__cards__active {
     gap: 16px 16px;
   }
 
-  .search__button {
-    left: 0px;
-    width: 288px;
+  .search__container-lower-btn {
+    width: 95%;
     height: 56px;
     margin-bottom: 24px;
     margin-top: 16px;
@@ -111,5 +110,6 @@
     line-height: 34px;
     padding-top: 30px;
     padding-bottom: 40px;
+    width: 250px;
   }
 }

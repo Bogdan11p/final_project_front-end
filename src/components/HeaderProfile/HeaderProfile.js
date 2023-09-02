@@ -56,7 +56,7 @@ const HeaderProfile = ({
   const keywordString = getKeywordString(keywords);
 
   return (
-    <header className="header__profile">
+    <header className="headerprofile">
       <NavBarProfile
         handleProfileLeave={handleProfileLeave}
         handleSignOut={handleSignOut}

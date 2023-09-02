@@ -2,10 +2,10 @@ import { APIkey } from "./Constants";
 const baseUrl = "https://nomoreparties.co/news/v2";
 
 const currentDate = new Date();
-const currentDateString = currentDate.toLocaleDateString("ro-RO");
+const currentDateString = currentDate.toLocaleDateString("en-US");
 const weekPriorDateString = new Date(
   currentDate.getTime() - 7 * 24 * 60 * 60 * 1000
-).toLocaleDateString("ro-RO");
+).toLocaleDateString("en-US");
 
 const newsApi = {
   request: async (url, type = {}) => {

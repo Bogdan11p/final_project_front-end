@@ -191,12 +191,37 @@
   }
 }
 
+@media screen and (max-width: 564px) {
+  .navbar__profile-buttons {
+    padding-right: 20px;
+  }
+}
+
 @media screen and (max-width: 555px) {
   .navbar__profile-container {
     gap: 0;
   }
   .navbar__profile-saved-articles {
     width: 130px;
+  }
+}
+
+@media screen and (max-width: 502px) {
+  .navbar__profile-buttons {
+    padding-right: 20px;
+  }
+
+  .navbar__profile-page {
+    padding: 0;
+  }
+
+  .navbar__profile-saved-articles {
+    padding: 0;
+    width: 90px;
+  }
+
+  .navbar__profile-logout-button {
+    padding: 0;
   }
 }
 

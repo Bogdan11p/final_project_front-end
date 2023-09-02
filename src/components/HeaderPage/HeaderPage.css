@@ -1,4 +1,4 @@
-.header__page {
+.headerpage {
   background-image: url("../../images/Frame-1-11.jpg");
 
   height: 576px;
@@ -38,7 +38,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .header__page {
+  .headerpage {
     height: 400px;
   }
 
@@ -77,7 +77,7 @@
   }
 
   @media screen and (max-width: 450px) {
-    .header__page {
+    .headerpage {
       height: 536px;
     }
 
@@ -103,6 +103,12 @@
       width: 92%;
       padding: 0;
       align-self: flex-start;
+    }
+  }
+
+  @media screen and (max-width: 316px) {
+    .header__page-subtitle {
+      margin-top: 35px;
     }
   }
 }

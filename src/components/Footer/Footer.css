@@ -56,6 +56,20 @@
   }
 }
 
+@media screen and (max-width: 502px) {
+  .footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 493px) {
+  .footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .footer {
     padding-left: 0;

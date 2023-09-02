@@ -11,7 +11,7 @@ const HeaderPage = ({
   handleOpenMobileMenuNotLoggedIn,
 }) => {
   return (
-    <header className="header__page">
+    <header className="headerpage">
       <NavBarPage
         handleSavedArticlesButton={handleSavedArticlesButton}
         handleSignIn={handleSignIn}

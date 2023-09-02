@@ -48,6 +48,7 @@
 @media screen and (max-width: 768px) {
   .about {
     height: 354px;
+    padding-left: 0;
   }
 
   .about__left {
@@ -110,18 +111,29 @@
   }
 
   .about__right-title {
-    width: 95%;
+    width: 90%;
 
-    margin-left: 16px;
+    margin-left: 40px;
   }
 
   .about__right-subtitle {
     width: 90%;
 
-    margin-left: 16px;
+    margin-left: 40px;
     margin-right: 16px;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 553px) {
+  .about__right-title {
+    width: 90%;
+  }
+
+  .about__right-subtitle {
+    width: 80%;
+    margin-left: 16px;
   }
 }
 
@@ -157,7 +169,7 @@
   }
 
   .about__right-title {
-    width: 95%;
+    width: 90%;
 
     margin-left: 16px;
   }

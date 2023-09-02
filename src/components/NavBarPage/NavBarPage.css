@@ -379,6 +379,18 @@
   }
 }
 
+@media screen and (max-width: 493px) {
+  .navbar__nli-page {
+    padding: 0;
+    width: 40px;
+  }
+
+  .navbar__nli-signin {
+    padding: 0;
+    width: 130px;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .navbar__nli {
     padding: 0 20px 0 20px;
