@@ -110,7 +110,7 @@ const NavBarProfile = ({
                 </h2>
               </NavLink>
               <NavLink to="/saved-news" style={{ textDecoration: "none" }}>
-                <button className="mobilemenu__li-savedArticles">
+                <button className="mobilemenu__li-savedarticles">
                   Saved Articles
                 </button>
               </NavLink>

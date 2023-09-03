@@ -29,7 +29,7 @@
   background: transparent;
   color: #1a1b22;
   height: 79px;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
@@ -40,7 +40,7 @@
   border: none;
   background: transparent;
   color: black;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -59,7 +59,7 @@
   align-items: center;
   border: 1px #d1d2d6 solid;
   border-radius: 20px;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
@@ -111,7 +111,7 @@
 
 .mobilemenu__profile-page {
   color: white;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 56px;
@@ -123,7 +123,7 @@
 
 .mobilemenu__profile-savedArticles {
   color: white;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 56px;
@@ -147,7 +147,7 @@
   border-radius: 20px;
   width: 288px;
   height: 40px;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;

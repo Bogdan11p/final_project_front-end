@@ -4,7 +4,7 @@
   height: 576px;
 }
 
-.header__page-container {
+.headerpage__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,7 +12,7 @@
   height: 496px;
 }
 
-.header__page-text {
+.headerpage__container-text {
   color: white;
   display: flex;
   flex-direction: column;
@@ -20,8 +20,8 @@
   text-align: start;
 }
 
-.header__page-title {
-  font-family: "Roboto Slab";
+.headerpage__container-title {
+  font-family: "Roboto Slab", Arial, sans-serif;
   font-size: 60px;
   font-weight: 400;
   line-height: 64px;
@@ -29,8 +29,8 @@
   margin: 40px 0 10px 0;
 }
 
-.header__page-subtitle {
-  font-family: "Roboto";
+.headerpage__container-subtitle {
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
@@ -42,38 +42,45 @@
     height: 400px;
   }
 
-  .header__page-container {
+  .headerpage__container {
     height: 334px;
-    width: 100%;
+    width: 90%;
+    padding-left: 40px;
   }
 
-  .header__page-text {
-    display: flex;
+  .headerpage__container-text {
+    height: 144px;
 
-    justify-content: center;
-    text-align: start;
-    width: 87%;
+    max-width: 452px;
+    /* width: 87%; */
   }
 
-  .header__page-title {
-    font-family: "Roboto Slab";
+  .headerpage__container-title {
+    font-family: "Roboto Slab", Arial, sans-serif;
     font-size: 36px;
     font-weight: 400;
     line-height: 40px;
     width: 75%;
     height: 80px;
-    align-self: center;
+    margin-top: 0;
+    margin-bottom: 10px;
   }
 
-  .header__page-subtitle {
-    font-family: "Roboto";
+  .headerpage__container-subtitle {
+    font-family: "Roboto", Arial, sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
-    width: 80%;
+    max-width: 452px;
+    /* width: 80%; */
     height: 48px;
-    align-self: center;
-    padding-left: 35px;
+    margin-top: 0;
+  }
+
+  @media screen and (max-width: 508px) {
+    .headerpage__container-subtitle {
+      max-width: 395px;
+    }
   }
 
   @media screen and (max-width: 450px) {
@@ -81,17 +88,19 @@
       height: 536px;
     }
 
-    .header__page-text {
+    .headerpage__container-text {
       margin: 0;
+      max-width: 285px;
     }
 
-    .header__page-container {
+    .headerpage__container {
       height: 480px;
       justify-content: start;
       padding-top: 35px;
-      width: 100%;
+
+      padding-left: 20px;
     }
-    .header__page-title {
+    .headerpage__container-title {
       width: 100%;
       margin-top: 0;
 
@@ -99,16 +108,17 @@
       align-self: flex-start;
     }
 
-    .header__page-subtitle {
+    .headerpage__container-subtitle {
       width: 92%;
       padding: 0;
       align-self: flex-start;
+      margin-top: 16px;
     }
   }
 
-  @media screen and (max-width: 316px) {
-    .header__page-subtitle {
-      margin-top: 35px;
+  @media screen and (max-width: 322px) {
+    .headerpage__container-subtitle {
+      margin-top: 16px;
     }
   }
 }

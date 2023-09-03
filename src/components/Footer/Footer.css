@@ -15,7 +15,7 @@
 .footer__link {
   text-decoration: none;
   color: #1a1b22;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
@@ -24,7 +24,7 @@
 .footer__right-tripleten {
   text-decoration: none;
   color: #1a1b22;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
@@ -40,7 +40,7 @@
   color: #b6bcbf;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
@@ -53,13 +53,6 @@
     height: 64px;
     margin: 0;
     width: 84.25%;
-  }
-}
-
-@media screen and (max-width: 502px) {
-  .footer {
-    padding-left: 20px;
-    padding-right: 20px;
   }
 }
 

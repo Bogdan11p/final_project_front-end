@@ -18,10 +18,12 @@ const HeaderPage = ({
         handleSignOut={handleSignOut}
         handleOpenMobileMenuNotLoggedIn={handleOpenMobileMenuNotLoggedIn}
       />
-      <div className="header__page-container">
-        <div className="header__page-text">
-          <h1 className="header__page-title">What's going on in the world?</h1>
-          <h2 className="header__page-subtitle">
+      <div className="headerpage__container">
+        <div className="headerpage__container-text">
+          <h1 className="headerpage__container-title">
+            What's going on in the world?
+          </h1>
+          <h2 className="headerpage__container-subtitle">
             Find the latest news on any topic and save them in your personal
             account.
           </h2>

@@ -152,7 +152,7 @@ const NavBarPage = ({ handleSignIn, handleSignOut, handleProfileIn }) => {
               <h2 className="mobilemenu__li-page">Home</h2>
 
               <NavLink to="/saved-news" style={{ textDecoration: "none" }}>
-                <button className="mobilemenu__li-savedArticles">
+                <button className="mobilemenu__li-savedarticles">
                   Saved Articles
                 </button>
               </NavLink>
