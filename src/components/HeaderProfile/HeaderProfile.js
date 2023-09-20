@@ -56,19 +56,19 @@ const HeaderProfile = ({
   const keywordString = getKeywordString(keywords);
 
   return (
-    <header className="header__profile">
+    <header className="headerprofile">
       <NavBarProfile
         handleProfileLeave={handleProfileLeave}
         handleSignOut={handleSignOut}
         handleVisibleReset={handleVisibleReset}
       />
 
-      <h2 className="header__profile-title">Saved articles</h2>
-      <h3 className="header__profile-articles">{`${currentUser}, you have ${savedNewsArticles.length} saved articles`}</h3>
-      <div className="header__profile-container">
-        <p className="header__profile-keywords">
+      <h1 className="headerprofile__title">Saved articles</h1>
+      <h2 className="headerprofile__articles">{`${currentUser}, you have ${savedNewsArticles.length} saved articles`}</h2>
+      <div className="headerprofile__container">
+        <p className="headerprofile__keywords">
           By keywords:{""}
-          <span className="header__profile-examples">
+          <span className="headerprofile__examples">
             {keywordString ? keywordString : ""}
           </span>{" "}
         </p>

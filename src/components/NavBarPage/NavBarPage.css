@@ -1,47 +1,52 @@
 /* notLoggedIn */
 
-.navbar__notLoggedIn {
+.navbar__nli {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 100px;
+  padding-right: 100px;
   border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
   height: 80px;
   position: relative;
 }
 
-.navbar__notLoggedIn-mobileMenu {
+.navbar__nli-mobilemenu {
   visibility: hidden;
+  background-image: url("../../images/mobile-menu-page.svg");
+  background-color: transparent;
+  border: none;
 }
 
-.navbar__notLoggedIn-page {
+.navbar__nli-page {
   border: none;
   background: transparent;
   color: white;
   height: 79px;
+  width: 68px;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
   cursor: pointer;
+  border-bottom: 3px white solid;
 }
 
-.navbar__notLoggedIn-page-container {
+.navbar__nli-page-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 34px;
   text-align: center;
 }
 
-.navbar__notLoggedIn-signin {
+.navbar__nli-signin {
   background: transparent;
   color: white;
   display: inline-block;
   align-items: center;
   border: 1px white solid;
-  border-radius: 20px;
+  border-radius: 25px;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -53,17 +58,17 @@
 
 /* loggedIn */
 
-.navbar__loggedIn {
+.navbar__li {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-left: 60px;
-  padding-right: 60px;
+  /* align-items: center; */
+  padding-left: 100px;
+  padding-right: 100px;
   border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
   height: 80px;
 }
 
-.navbar__loggedIn-page {
+.navbar__li-page {
   border: none;
   background: transparent;
   color: white;
@@ -77,32 +82,33 @@
   border-bottom: 3px white solid;
 }
 
-.navbar__loggedIn-page-container {
+.navbar__li-page-container {
   display: flex;
-  gap: 10px;
+  gap: 32px;
   height: 79px;
   align-items: center;
 }
 
-.navbar__loggedIn-title {
+.navbar__li-title {
   width: 200px;
   height: 24px;
   align-self: center;
 }
 
-.navbar__loggedIn-mobileMenu {
-  width: 24px;
-  height: 24px;
-  align-self: center;
+.navbar__li-mobilemenu {
+  visibility: hidden;
+  background-image: url("../../images/mobile-menu-page.svg");
+  background-color: transparent;
+  border: none;
 }
 
-.navbar__loggedIn-buttons {
+.navbar__li-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.navbar__loggedIn-saved-articles {
+.navbar__li-saved-articles {
   border: none;
   background: transparent;
   color: #b6bcbf;
@@ -115,7 +121,7 @@
   height: 79px;
 }
 
-.navbar__loggedIn-logout-button {
+.navbar__li-logout-button {
   background: transparent;
   color: white;
   display: flex;
@@ -129,11 +135,14 @@
   cursor: pointer;
 }
 
-.navbar__loggedIn-mobileMenu {
+.navbar__li-mobilemenu {
   visibility: hidden;
+  background-image: url("../../images/mobile-menu-page.svg");
+  background-color: transparent;
+  border: none;
 }
 
-.mobileMenu {
+.mobilemenu {
   position: fixed;
   top: 1px;
   display: flex;
@@ -142,22 +151,30 @@
   align-items: center;
   background-color: #1a1b22;
   height: 230px;
-  width: 320px;
+  width: 100%;
   z-index: 1;
 }
 
-.mobileMenu__notLoggedIn-upper {
+.mobilemenu__nli-upper {
   display: flex;
   justify-content: space-between;
-  width: 320px;
+  width: 100%;
   height: 56px;
   position: absolute;
-  top: 5px;
+  top: -1px;
   border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
   margin: 0 20px 0 20px;
 }
 
-.mobileMenu__notLoggedIn-title {
+.mobilemenu__nli-lower {
+  width: 100%;
+  margin-right: px;
+}
+.mobilemenu__li-lower {
+  position: relative;
+}
+
+.mobilemenu__nli-title {
   margin-left: 15px;
   position: absolute;
   bottom: 17px;
@@ -165,75 +182,86 @@
   height: 24px;
 }
 
-.mobileMenu__notLoggedIn-close {
+.mobilemenu__nli-close {
   margin-right: 15px;
   position: absolute;
-  right: 5px;
+  right: 0px;
   top: 15px;
 }
 
-.mobileMenu__notLoggedIn-page {
+.mobilemenu__nli-page {
   color: white;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 56px;
   margin: 0;
+  height: 56px;
+  margin-top: 16px;
+  margin-left: 16px;
+  position: absolute;
+  top: 55px;
 }
 
-.mobileMenu__notLoggedIn-signin {
+.mobilemenu__nli-signin {
   background: transparent;
   color: white;
   display: inline-block;
   align-items: center;
   border: 1px white solid;
   border-radius: 20px;
-  width: 288px;
+  width: 90%;
   height: 56px;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
   cursor: pointer;
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  position: relative;
+  top: 55px;
 }
 
-.mobileMenu__loggedIn-upper {
+.mobilemenu__li-upper {
   display: flex;
   justify-content: space-between;
-  width: 320px;
+  width: 100%;
   height: 56px;
   position: absolute;
-  top: 10px;
+  top: -1px;
   border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
   margin: 0 20px 0 20px;
 }
 
-.mobileMenu__loggedIn-lower {
+.mobilemenu__li-lower {
   display: flex;
   flex-direction: column;
   gap: 10px;
   height: 155px;
   position: absolute;
   bottom: 10px;
+  width: 100%;
+  margin-left: 30px;
 }
 
-.mobileMenu__loggedIn-title {
+.mobilemenu__li-title {
   margin-left: 15px;
   width: 117px;
   height: 24px;
   position: absolute;
-  top: 10px;
+  top: 15px;
 }
 
-.mobileMenu__loggedIn-close {
-  margin-right: 15px;
+.mobilemenu__li-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 15px;
   cursor: pointer;
 }
 
-.mobileMenu__loggedIn-page {
+.mobilemenu__li-page {
   color: white;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
@@ -243,7 +271,7 @@
   height: 40px;
 }
 
-.mobileMenu__loggedIn-savedArticles {
+.mobilemenu__li-savedarticles {
   color: white;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
@@ -257,9 +285,11 @@
   align-items: center;
   padding: 0;
   cursor: pointer;
+  position: relative;
+  top: 8px;
 }
 
-.mobileMenu__loggedIn-logout-button {
+.mobilemenu__li-logout-button {
   background: transparent;
   color: white;
   display: flex;
@@ -275,62 +305,139 @@
   line-height: 24px;
   padding: 0;
   cursor: pointer;
+  position: relative;
+  top: 20px;
+  width: 91%;
+}
+
+.mobilemenu__page {
+  height: 2000px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
 
 @media screen and (max-width: 768px) {
-  .navbar__notLoggedIn {
+  .navbar__nli {
     padding-left: 40px;
     padding-right: 40px;
+    height: 66px;
+  }
+
+  .navbar__nli-page {
+    height: 66px;
+    width: 60px;
+    font-size: 16px;
+  }
+
+  .navbar__nli-page-container {
+    gap: 19px;
+  }
+
+  .navbar__nli-title {
+    height: 24.8px;
+  }
+
+  .navbar__nli-signin {
+    width: 152px;
+    height: 40px;
+    font-size: 16px;
   }
 
   /* loggedIn */
 
-  .navbar__loggedIn {
+  .navbar__li {
     padding-left: 40px;
     padding-right: 40px;
+    height: 66px;
+  }
+
+  .navbar__li-page {
+    height: 66px;
+    font-size: 16px;
+    width: 60px;
+  }
+
+  .navbar__li-page-container {
+    gap: 0px;
+  }
+
+  .navbar__li-saved-articles {
+    font-size: 16px;
+    width: 80px;
+  }
+
+  .navbar__li-logout-button {
+    height: 40px;
   }
 }
 
-@media screen and (max-width: 320px) {
-  .navbar__notLoggedIn {
-    padding: 0 20px 0 20px;
-    position: relative;
+@media screen and (max-width: 493px) {
+  .navbar__nli-page {
+    padding: 0;
+    width: 40px;
   }
 
-  .navbar__notLoggedIn-buttons {
+  .navbar__nli-signin {
+    padding: 0;
+    width: 130px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .navbar__nli {
+    padding: 0 20px 0 20px;
+    height: 66px;
+  }
+
+  .navbar__nli-buttons {
     visibility: hidden;
     position: absolute;
     right: 40px;
   }
 
-  .navbar__notLoggedIn-mobileMenu {
+  .navbar__nli-mobilemenu {
     visibility: visible;
     position: absolute;
-    right: 20px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
   }
 
   /* loggedIn */
 
-  .navbar__loggedIn-buttons {
+  .navbar__li-buttons {
     visibility: hidden;
     position: relative;
-    right: 130px;
+    right: 220px;
+    width: 150px;
   }
 
-  .navbar__loggedIn-mobileMenu {
+  .navbar__li-mobilemenu {
     visibility: visible;
   }
 
-  .navbar__loggedIn {
+  .navbar__li {
     padding-left: 20px;
     padding-right: 20px;
     display: flex;
     position: relative;
   }
 
-  .navbar__loggedIn-mobileMenu {
-    position: relative;
-    left: 100px;
+  .navbar__li-mobilemenu {
+    visibility: visible;
+    position: absolute;
+    right: 16px;
+    top: 18px;
+    width: 24px;
+    height: 24px;
   }
   .mobilrMenu {
   }

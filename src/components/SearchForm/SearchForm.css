@@ -1,12 +1,12 @@
 .search__form {
   margin: 0 auto 75px auto;
   padding-top: 90px;
-  width: 608px;
+  max-width: 608px;
   height: 64px;
   position: relative;
 }
 
-.search__form_button {
+.search__form-button {
   width: 168px;
   height: 64px;
   background-color: rgb(62, 62, 244);
@@ -16,14 +16,14 @@
   position: absolute;
   right: -10px;
   cursor: pointer;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
 }
 
-.search__form_button-clicked {
+.search__form-button-clicked {
   width: 168px;
   height: 64px;
   background-color: rgb(62, 62, 244);
@@ -33,7 +33,7 @@
   position: absolute;
   right: -10px;
   cursor: pointer;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -60,58 +60,73 @@
 
 @media screen and (max-width: 768px) {
   .search__form {
-    width: 452px;
+    max-width: 80%;
     height: 58px;
     margin: 0 auto 39px auto;
-    padding-top: 37px;
+    padding-top: 48px;
+    padding-left: 75px;
   }
 
   .search__form-input {
-    width: 452px;
+    max-width: 70%;
     height: 57px;
   }
 
-  .search__form_button {
-    top: 36px;
-    right: -23px;
-    width: 160px;
+  .search__form-button {
+    top: 47px;
+    right: 70px;
+    max-width: 156px;
     height: 61px;
   }
 
-  .search__form_button-clicked {
-    top: 36px;
-    right: -23px;
-    width: 160px;
+  .search__form-button-clicked {
+    top: 47px;
+    right: 70px;
+    max-width: 156px;
     height: 61px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 450px) {
   .search__form {
-    width: 288px;
-
-    padding-top: 100px;
+    max-width: calc(100% - 32px);
+    padding-left: 0;
+    padding-top: 120px;
   }
 
   .search__form-input {
-    width: 268px;
+    max-width: calc(100% - 22px);
     height: 56px;
 
     margin-top: 0;
   }
 
-  .search__form_button {
-    width: 288px;
-
-    top: 170px;
+  .search__form-button {
+    width: 100%;
+    max-width: 452px;
+    top: 190px;
     left: 0;
     height: 56px;
   }
-  .search__form_button-clicked {
-    width: 288px;
-
-    top: 170px;
+  .search__form-button-clicked {
+    width: 100%;
+    max-width: 452px;
+    top: 190px;
     left: 0;
     height: 56px;
+  }
+}
+
+@media screen and (max-width: 316px) {
+  .search__form {
+    padding-top: 120px;
+  }
+
+  .search__form-button {
+    top: 190px;
+  }
+
+  .search__form-button-clicked {
+    top: 190px;
   }
 }

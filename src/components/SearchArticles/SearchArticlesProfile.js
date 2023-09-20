@@ -23,7 +23,7 @@ const SearchArticlesProfile = ({
   }, [handleSavedArticlesButton]);
 
   return (
-    <div className="search">
+    <section className="search">
       <h2 className="search__title">Search results</h2>
       <ul className={searchArticlesClassname}>
         <NewsCardList
@@ -36,7 +36,7 @@ const SearchArticlesProfile = ({
           visible={visible}
         />
       </ul>
-    </div>
+    </section>
   );
 };
 

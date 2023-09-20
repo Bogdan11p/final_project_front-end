@@ -23,7 +23,7 @@ const SearchArticlesPage = ({
   return (
     <>
       {newsCards.length > 0 && (
-        <div className="search">
+        <section className="search">
           <div className={searchContainerClassname}>
             <h2 className="search__title">Search results</h2>
             <div className={searchArticlesClassname}>
@@ -39,12 +39,17 @@ const SearchArticlesPage = ({
               />
             </div>
             {visible === 3 && newsCards.length > 3 && (
-              <button className="search__button" onClick={showMoreArticles}>
-                Show more
-              </button>
+              <div className="search__container-lower">
+                <button
+                  className="search__container-lower-btn"
+                  onClick={showMoreArticles}
+                >
+                  Show more
+                </button>
+              </div>
             )}
           </div>
-        </div>
+        </section>
       )}
       {newsCards.length <= 0 && <NothingFound />}
     </>
