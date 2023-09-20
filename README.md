@@ -11,7 +11,9 @@ This front-end application allows users to search for news articles published fr
 Project is created with:
 
 -React: 18.2.0
+
 -Node.js: 18.15.0
+
 -Express: 4.18.2
 
 ### Usage
